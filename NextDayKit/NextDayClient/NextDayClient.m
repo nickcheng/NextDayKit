@@ -48,15 +48,15 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)connect {
-  if (_webSocket.readyState != SR_OPEN)
-    [_webSocket open];
-}
-
 - (void)initClientWithCertificate:(NSString *)certURL andCipher:(NSString *)cipher {
   _certData = [[NSData alloc] initWithContentsOfFile:certURL];
   _certCipher = cipher;
   [self initWebSocket];
+}
+
+- (void)connect {
+  if (_webSocket.readyState != SR_OPEN)
+    [_webSocket open];
 }
 
 #pragma mark -
@@ -86,8 +86,9 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
   NDLI(@"Websocket Connected");
   
-  //
-  [_webSocket send:@"Hello!!!"];
+  // Reset MessageCount
+  NDLI(@"Reset MessageCount. Last one was:%d", self.messageCount);
+  self.messageCount = 0;
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {

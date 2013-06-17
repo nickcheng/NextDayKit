@@ -26,9 +26,9 @@
 		40EE5747176DB0180085F6C3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5746176DB0180085F6C3 /* CFNetwork.framework */; };
 		40EE5749176DB02D0085F6C3 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5748176DB02D0085F6C3 /* libicucore.dylib */; };
 		40EE574B176DB0CD0085F6C3 /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 40EE574A176DB0CD0085F6C3 /* client.p12 */; };
-		40EE574E176DB16A0085F6C3 /* NextDayClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE574D176DB16A0085F6C3 /* NextDayClient.m */; };
-		40EE5755176E07D70085F6C3 /* NextDayClient+Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE5754176E07D70085F6C3 /* NextDayClient+Calendar.m */; };
-		40EE5758176F0CDA0085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE5757176F0CDA0085F6C3 /* NextDayClient+HandlerBlocks.m */; };
+		40EE5764176F11870085F6C3 /* NextDayClient+Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE575E176F11870085F6C3 /* NextDayClient+Calendar.m */; };
+		40EE5765176F11870085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE5760176F11870085F6C3 /* NextDayClient+HandlerBlocks.m */; };
+		40EE5766176F11870085F6C3 /* NextDayClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE5762176F11870085F6C3 /* NextDayClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,13 +60,13 @@
 		40EE5746176DB0180085F6C3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		40EE5748176DB02D0085F6C3 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		40EE574A176DB0CD0085F6C3 /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = client.p12; sourceTree = "<group>"; };
-		40EE574C176DB16A0085F6C3 /* NextDayClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextDayClient.h; sourceTree = "<group>"; };
-		40EE574D176DB16A0085F6C3 /* NextDayClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextDayClient.m; sourceTree = "<group>"; };
-		40EE574F176DBA850085F6C3 /* NextDayClientConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextDayClientConfig.h; sourceTree = "<group>"; };
-		40EE5753176E07D70085F6C3 /* NextDayClient+Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+Calendar.h"; sourceTree = "<group>"; };
-		40EE5754176E07D70085F6C3 /* NextDayClient+Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Calendar.m"; sourceTree = "<group>"; };
-		40EE5756176F0CDA0085F6C3 /* NextDayClient+HandlerBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+HandlerBlocks.h"; sourceTree = "<group>"; };
-		40EE5757176F0CDA0085F6C3 /* NextDayClient+HandlerBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+HandlerBlocks.m"; sourceTree = "<group>"; };
+		40EE575D176F11870085F6C3 /* NextDayClient+Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+Calendar.h"; sourceTree = "<group>"; };
+		40EE575E176F11870085F6C3 /* NextDayClient+Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Calendar.m"; sourceTree = "<group>"; };
+		40EE575F176F11870085F6C3 /* NextDayClient+HandlerBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+HandlerBlocks.h"; sourceTree = "<group>"; };
+		40EE5760176F11870085F6C3 /* NextDayClient+HandlerBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+HandlerBlocks.m"; sourceTree = "<group>"; };
+		40EE5761176F11870085F6C3 /* NextDayClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextDayClient.h; sourceTree = "<group>"; };
+		40EE5762176F11870085F6C3 /* NextDayClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextDayClient.m; sourceTree = "<group>"; };
+		40EE5763176F11870085F6C3 /* NextDayClientConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextDayClientConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +119,13 @@
 		40EE5718176DAF310085F6C3 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				40EE574A176DB0CD0085F6C3 /* client.p12 */,
-				40EE5737176DAF970085F6C3 /* NextDayKit */,
+				40EE5759176F11870085F6C3 /* NextDayKit */,
 				40EE5721176DAF310085F6C3 /* AppDelegate.h */,
 				40EE5722176DAF310085F6C3 /* AppDelegate.m */,
 				40EE572A176DAF310085F6C3 /* ViewController.h */,
 				40EE572B176DAF310085F6C3 /* ViewController.m */,
 				40EE572D176DAF310085F6C3 /* ViewController.xib */,
+				40EE5767176F11930085F6C3 /* Resources */,
 				40EE5743176DAFE80085F6C3 /* Vendor */,
 				40EE5719176DAF310085F6C3 /* Supporting Files */,
 			);
@@ -145,21 +145,6 @@
 				40EE5728176DAF310085F6C3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		40EE5737176DAF970085F6C3 /* NextDayKit */ = {
-			isa = PBXGroup;
-			children = (
-				40EE574C176DB16A0085F6C3 /* NextDayClient.h */,
-				40EE574D176DB16A0085F6C3 /* NextDayClient.m */,
-				40EE5753176E07D70085F6C3 /* NextDayClient+Calendar.h */,
-				40EE5754176E07D70085F6C3 /* NextDayClient+Calendar.m */,
-				40EE5756176F0CDA0085F6C3 /* NextDayClient+HandlerBlocks.h */,
-				40EE5757176F0CDA0085F6C3 /* NextDayClient+HandlerBlocks.m */,
-				40EE574F176DBA850085F6C3 /* NextDayClientConfig.h */,
-			);
-			name = NextDayKit;
-			path = ../../NextDayKit;
 			sourceTree = "<group>";
 		};
 		40EE5738176DAFDD0085F6C3 /* SocketRocket */ = {
@@ -183,6 +168,53 @@
 				40EE5738176DAFDD0085F6C3 /* SocketRocket */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		40EE5759176F11870085F6C3 /* NextDayKit */ = {
+			isa = PBXGroup;
+			children = (
+				40EE575A176F11870085F6C3 /* Model */,
+				40EE575B176F11870085F6C3 /* NextDayClient */,
+				40EE5763176F11870085F6C3 /* NextDayClientConfig.h */,
+			);
+			name = NextDayKit;
+			path = ../../NextDayKit;
+			sourceTree = "<group>";
+		};
+		40EE575A176F11870085F6C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40EE575B176F11870085F6C3 /* NextDayClient */ = {
+			isa = PBXGroup;
+			children = (
+				40EE575C176F11870085F6C3 /* API */,
+				40EE575F176F11870085F6C3 /* NextDayClient+HandlerBlocks.h */,
+				40EE5760176F11870085F6C3 /* NextDayClient+HandlerBlocks.m */,
+				40EE5761176F11870085F6C3 /* NextDayClient.h */,
+				40EE5762176F11870085F6C3 /* NextDayClient.m */,
+			);
+			path = NextDayClient;
+			sourceTree = "<group>";
+		};
+		40EE575C176F11870085F6C3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				40EE575D176F11870085F6C3 /* NextDayClient+Calendar.h */,
+				40EE575E176F11870085F6C3 /* NextDayClient+Calendar.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		40EE5767176F11930085F6C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40EE574A176DB0CD0085F6C3 /* client.p12 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +291,9 @@
 				40EE5740176DAFDD0085F6C3 /* base64.c in Sources */,
 				40EE5741176DAFDD0085F6C3 /* NSData+SRB64Additions.m in Sources */,
 				40EE5742176DAFDD0085F6C3 /* SRWebSocket.m in Sources */,
-				40EE574E176DB16A0085F6C3 /* NextDayClient.m in Sources */,
-				40EE5755176E07D70085F6C3 /* NextDayClient+Calendar.m in Sources */,
-				40EE5758176F0CDA0085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */,
+				40EE5764176F11870085F6C3 /* NextDayClient+Calendar.m in Sources */,
+				40EE5765176F11870085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */,
+				40EE5766176F11870085F6C3 /* NextDayClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
