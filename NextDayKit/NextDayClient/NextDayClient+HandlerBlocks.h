@@ -8,7 +8,7 @@
 
 #import "NextDayClient.h"
 
-typedef void (^NextDayClientCompletionBlock)(BOOL success, id *result, NSError *error);
+typedef void (^NextDayClientCompletionBlock)(BOOL success, id result, NSError *error);
 
 @interface NextDayClient (HandlerBlocks)
 

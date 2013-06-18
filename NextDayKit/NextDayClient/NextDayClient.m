@@ -9,6 +9,7 @@
 #import "NextDayClient.h"
 #import "SRWebSocket.h"
 #import "NextDayClientConfig.h"
+#import "NextDayClientRequest.h"
 
 @interface NextDayClient () <SRWebSocketDelegate>
 @end
@@ -18,9 +19,12 @@
   NSData *_certData;
   NSString *_certCipher;
   
+  NextDayClientReadyState _readyState;
   NSInteger _messageCount;
+  NSMutableDictionary *_requestHandlers;
 }
 
+@synthesize readyState = _readyState;
 @synthesize messageCount = _messageCount;
 
 #pragma mark -
@@ -40,9 +44,21 @@
 	if((self = [super init]) == nil) return nil;
   
   //
-  _messageCount = 0;
+  _messageCount = 1;
+  _requestHandlers = [[NSMutableDictionary alloc] init];
+  _readyState = NextDayClientReadyStateClosed;
   
   return self;
+}
+
+#pragma mark -
+#pragma mark Getter / Setter
+
+- (NextDayClientReadyState)readyState {
+  if (_webSocket != nil)
+    _readyState = (NextDayClientReadyState)_webSocket.readyState;
+    
+  return _readyState;
 }
 
 #pragma mark -
@@ -57,6 +73,62 @@
 - (void)connect {
   if (_webSocket.readyState != SR_OPEN)
     [_webSocket open];
+}
+
+- (void)send:(NextDayClientRequest *)request completion:(NextDayClientResponseBlock)handler {
+  // Check connection. If need reconnect.
+  if (self.readyState != NextDayClientReadyStateOpen) {
+    NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
+                                         code:400
+                                     userInfo:@{NSLocalizedDescriptionKey: @"Connection is not open. Please check connection or try again later."}];
+    if (handler != nil)
+      handler(nil, error);
+    return;
+  }
+  
+  // Add MessageCount to request
+  request.messageCount = self.messageCount;
+  self.messageCount ++;
+  
+  // Parse request to json
+  NSError *error;
+  NSData *jsonData = [NSJSONSerialization dataWithJSONObject:request.data options:NSJSONWritingPrettyPrinted error:&error];
+  if (error != nil) {
+    if (handler != nil)
+      handler(nil, error);
+    return;
+  }
+  NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+  // Send json
+  NDLI(@"Sending No.%d message: %@", request.messageCount, jsonString);
+  [_webSocket send:jsonString];
+  _requestHandlers[[NSNumber numberWithInteger:request.messageCount]] = handler;
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)resetVariables {
+  self.messageCount = 1;
+  [_requestHandlers removeAllObjects];
+}
+
+- (void)processAPIMessage:(NSDictionary *)dict {
+  
+}
+
+- (void)processResponseMessage:(NSDictionary *)dict {
+  // Get messagecount and Callback handler
+  NSNumber *responseMessageCount = dict[@"messageCount"];
+  if ([_requestHandlers.allKeys containsObject:responseMessageCount]) {
+    NDLI(@"Response found matched request handler: %@", responseMessageCount);
+    NextDayClientResponseBlock handler = _requestHandlers[responseMessageCount];
+    handler(dict, nil);
+    [_requestHandlers removeObjectForKey:responseMessageCount];
+  } else {
+    NDLE(@"Response can't found matched request handler: %@", responseMessageCount);
+  }
 }
 
 #pragma mark -
@@ -77,7 +149,6 @@
   } else {
     NDLE(@"No certificate found! Can't use NextDayClient.");
   }
-
 }
 
 #pragma mark -
@@ -88,15 +159,33 @@
   
   // Reset MessageCount
   NDLI(@"Reset MessageCount. Last one was:%d", self.messageCount);
-  self.messageCount = 0;
+  [self resetVariables];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
   NDLI(@"Received \"%@\"", message);
+  
+  // Parse response to dict
+  NSData *jsonData = [(NSString *)message dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *error;
+  NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+  if (error != nil) {
+    NDLE(@"Parsing server response to json dict error: %@", error);
+    return;
+  }
+  
+  // check is response or api
+  NSString *context = jsonObject[@"context"];
+  if ([context isEqualToString:@"api"]) {
+    [self processAPIMessage:jsonObject];
+  } else if ([context isEqualToString:@"response"]) {
+    [self processResponseMessage:jsonObject];
+  }
+
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
-  NDLI(@"WebSocket closed");
+  NDLI(@"WebSocket closed. Code:%d. reason:%@", code, reason);
   
   _webSocket = nil;
 }

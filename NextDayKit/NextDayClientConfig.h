@@ -7,6 +7,7 @@
 //
 
 #define NEXTDAY_SERVERURL @"wss://test.nextday.im/1/ws/"
+#define NEXTDAYCLIENT_ERRORDOMAIN @"im.nextday.nextdaykit"
 
 // Logging
 #ifdef DDLogInfo

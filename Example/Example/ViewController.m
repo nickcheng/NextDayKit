@@ -8,12 +8,25 @@
 
 #import "ViewController.h"
 #import "NextDayClient.h"
+#import "NextDayClient+Calendar.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+- (IBAction)Action1Tapped:(id)sender {
+//  [[NextDayClient sharedClient] getCalDataFromDate:[NSDate date]
+//                                            toDate:[NSDate date]
+//                                        completion:^(BOOL success, id result, NSError *error) {
+//                                          NSLog(@"IN: %@", result);
+//                                        }];
+  
+  [[NextDayClient sharedClient] getCalDataFromDates:@[[NSDate date]] completion:^(BOOL success, id result, NSError *error) {
+    NSLog(@"IN: %@", result);
+  }];
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
