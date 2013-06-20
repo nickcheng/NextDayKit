@@ -10,6 +10,7 @@
 #import "SRWebSocket.h"
 #import "NextDayClientConfig.h"
 #import "NextDayClientRequest.h"
+#import "NSArray+SSToolkitAdditions.h"
 
 @interface NextDayClient () <SRWebSocketDelegate>
 @end
@@ -18,6 +19,7 @@
   SRWebSocket *_webSocket;
   NSData *_certData;
   NSString *_certCipher;
+  NSMutableArray *_sendQueueWhenConnecting;
   
   NextDayClientReadyState _readyState;
   NSInteger _messageCount;
@@ -47,6 +49,7 @@
   _messageCount = 1;
   _requestHandlers = [[NSMutableDictionary alloc] init];
   _readyState = NextDayClientReadyStateClosed;
+  _sendQueueWhenConnecting = [[NSMutableArray alloc] init];
   
   return self;
 }
@@ -76,6 +79,11 @@
 }
 
 - (void)send:(NextDayClientRequest *)request completion:(NextDayClientResponseBlock)handler {
+  // If socket is connecting, queue the request
+  if (self.readyState == NextDayClientReadyStateConnecting) {
+    [_sendQueueWhenConnecting addObject:@[request, handler]];
+    return;
+  }
   // Check connection. If need reconnect.
   if (self.readyState != NextDayClientReadyStateOpen) {
     NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
@@ -160,6 +168,20 @@
   // Reset MessageCount
   NDLI(@"Reset MessageCount. Last one was:%d", self.messageCount);
   [self resetVariables];
+  
+  // Process requests sent when connecting
+  if (_sendQueueWhenConnecting != nil && _sendQueueWhenConnecting.count > 0) {
+    NSArray *array = _sendQueueWhenConnecting.firstObject;
+    while (array != nil) {
+      if (array != nil && array.count == 2) {
+        NextDayClientRequest *req = array[0];
+        NextDayClientResponseBlock resB = array[1];
+        [self send:req completion:resB];
+      }
+      [_sendQueueWhenConnecting removeObject:array];
+      array = _sendQueueWhenConnecting.firstObject;
+    }
+  }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {

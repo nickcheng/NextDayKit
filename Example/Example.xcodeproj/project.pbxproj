@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40B583521772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B583511772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m */; };
 		40EE5713176DAF310085F6C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5712176DAF310085F6C3 /* UIKit.framework */; };
 		40EE5715176DAF310085F6C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5714176DAF310085F6C3 /* Foundation.framework */; };
 		40EE5717176DAF310085F6C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5716176DAF310085F6C3 /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40B583501772E11D00D2D6FA /* NSArray+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+SSToolkitAdditions.h"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/Pods/SSToolkit/SSToolkit/NSArray+SSToolkitAdditions.h"; sourceTree = "<group>"; };
+		40B583511772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+SSToolkitAdditions.m"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/Pods/SSToolkit/SSToolkit/NSArray+SSToolkitAdditions.m"; sourceTree = "<group>"; };
 		40EE570F176DAF310085F6C3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EE5712176DAF310085F6C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40EE5714176DAF310085F6C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 		40EE5743176DAFE80085F6C3 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				40B583501772E11D00D2D6FA /* NSArray+SSToolkitAdditions.h */,
+				40B583511772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m */,
 				40EE576E176F18570085F6C3 /* NSDate+nLibrary.h */,
 				40EE576F176F18570085F6C3 /* NSDate+nLibrary.m */,
 				40EE5738176DAFDD0085F6C3 /* SocketRocket */,
@@ -312,6 +317,7 @@
 				40EE576D176F12D40085F6C3 /* NextDayClientRequest.m in Sources */,
 				40EE5770176F18570085F6C3 /* NSDate+nLibrary.m in Sources */,
 				40EE5773176F44230085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */,
+				40B583521772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +440,7 @@
 				40EE5734176DAF310085F6C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
