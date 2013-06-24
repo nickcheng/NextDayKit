@@ -135,12 +135,7 @@
     handler(dict, nil);
     
     // Remove handler
-    // If response has "hasMore" property and is true, don't remove the handler
-    if ([dict.allKeys containsObject:@"hasMore"]
-        && ((NSNumber *)dict[@"hasMore"]).boolValue)
-      NDLI(@"Will get more response for message: %@", responseMessageCount);
-    else
-      [_requestHandlers removeObjectForKey:responseMessageCount];
+    [_requestHandlers removeObjectForKey:responseMessageCount];
   } else {
     NDLE(@"Response can't found matched request handler: %@", responseMessageCount);
   }
