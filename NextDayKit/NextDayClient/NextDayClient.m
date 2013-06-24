@@ -133,7 +133,14 @@
     NDLI(@"Response found matched request handler: %@", responseMessageCount);
     NextDayClientResponseBlock handler = _requestHandlers[responseMessageCount];
     handler(dict, nil);
-    [_requestHandlers removeObjectForKey:responseMessageCount];
+    
+    // Remove handler
+    // If response has "hasMore" property and is true, don't remove the handler
+    if ([dict.allKeys containsObject:@"hasMore"]
+        && ((NSNumber *)dict[@"hasMore"]).boolValue)
+      NDLI(@"Will get more response for message: %@", responseMessageCount);
+    else
+      [_requestHandlers removeObjectForKey:responseMessageCount];
   } else {
     NDLE(@"Response can't found matched request handler: %@", responseMessageCount);
   }
