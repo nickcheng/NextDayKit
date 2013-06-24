@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		40B583521772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B583511772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m */; };
+		40D6AAE51776BA47008427C5 /* NextDayClient+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAE41776BA47008427C5 /* NextDayClient+Log.m */; };
+		40D6AAF21776BB17008427C5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAE81776BB17008427C5 /* FMDatabase.m */; };
+		40D6AAF31776BB17008427C5 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAEA1776BB17008427C5 /* FMDatabaseAdditions.m */; };
+		40D6AAF41776BB17008427C5 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAEC1776BB17008427C5 /* FMDatabasePool.m */; };
+		40D6AAF51776BB17008427C5 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAEE1776BB17008427C5 /* FMDatabaseQueue.m */; };
+		40D6AAF71776BB17008427C5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAF11776BB17008427C5 /* FMResultSet.m */; };
+		40D6AAF91776F9E4008427C5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D6AAF81776F9E4008427C5 /* libsqlite3.dylib */; };
+		40D6AAFC1776FAB7008427C5 /* NextDayClient+EnvVars.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAFB1776FAB7008427C5 /* NextDayClient+EnvVars.m */; };
+		40D6AAFF1776FC49008427C5 /* NextDayClientEnvVars.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AAFE1776FC49008427C5 /* NextDayClientEnvVars.m */; };
+		40D6AB02177735AF008427C5 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AB01177735AF008427C5 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		40D6AB0617773B81008427C5 /* NSDate+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6AB0517773B81008427C5 /* NSDate+SSToolkitAdditions.m */; };
 		40EE5713176DAF310085F6C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5712176DAF310085F6C3 /* UIKit.framework */; };
 		40EE5715176DAF310085F6C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5714176DAF310085F6C3 /* Foundation.framework */; };
 		40EE5717176DAF310085F6C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5716176DAF310085F6C3 /* CoreGraphics.framework */; };
@@ -38,6 +49,27 @@
 /* Begin PBXFileReference section */
 		40B583501772E11D00D2D6FA /* NSArray+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+SSToolkitAdditions.h"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/Pods/SSToolkit/SSToolkit/NSArray+SSToolkitAdditions.h"; sourceTree = "<group>"; };
 		40B583511772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+SSToolkitAdditions.m"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/Pods/SSToolkit/SSToolkit/NSArray+SSToolkitAdditions.m"; sourceTree = "<group>"; };
+		40D6AAE31776BA47008427C5 /* NextDayClient+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+Log.h"; sourceTree = "<group>"; };
+		40D6AAE41776BA47008427C5 /* NextDayClient+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Log.m"; sourceTree = "<group>"; };
+		40D6AAE71776BB17008427C5 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		40D6AAE81776BB17008427C5 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		40D6AAE91776BB17008427C5 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		40D6AAEA1776BB17008427C5 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		40D6AAEB1776BB17008427C5 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		40D6AAEC1776BB17008427C5 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		40D6AAED1776BB17008427C5 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		40D6AAEE1776BB17008427C5 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		40D6AAF01776BB17008427C5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		40D6AAF11776BB17008427C5 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		40D6AAF81776F9E4008427C5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		40D6AAFA1776FAB7008427C5 /* NextDayClient+EnvVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+EnvVars.h"; sourceTree = "<group>"; };
+		40D6AAFB1776FAB7008427C5 /* NextDayClient+EnvVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+EnvVars.m"; sourceTree = "<group>"; };
+		40D6AAFD1776FC49008427C5 /* NextDayClientEnvVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextDayClientEnvVars.h; sourceTree = "<group>"; };
+		40D6AAFE1776FC49008427C5 /* NextDayClientEnvVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextDayClientEnvVars.m; sourceTree = "<group>"; };
+		40D6AB00177735AF008427C5 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenUDID.h; path = ../../../OpenUDID/OpenUDID.h; sourceTree = "<group>"; };
+		40D6AB01177735AF008427C5 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenUDID.m; path = ../../../OpenUDID/OpenUDID.m; sourceTree = "<group>"; };
+		40D6AB0417773B81008427C5 /* NSDate+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+SSToolkitAdditions.h"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/Pods/SSToolkit/SSToolkit/NSDate+SSToolkitAdditions.h"; sourceTree = "<group>"; };
+		40D6AB0517773B81008427C5 /* NSDate+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SSToolkitAdditions.m"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/Pods/SSToolkit/SSToolkit/NSDate+SSToolkitAdditions.m"; sourceTree = "<group>"; };
 		40EE570F176DAF310085F6C3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EE5712176DAF310085F6C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40EE5714176DAF310085F6C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D6AAF91776F9E4008427C5 /* libsqlite3.dylib in Frameworks */,
 				40EE5749176DB02D0085F6C3 /* libicucore.dylib in Frameworks */,
 				40EE5747176DB0180085F6C3 /* CFNetwork.framework in Frameworks */,
 				40EE5745176DB0130085F6C3 /* Security.framework in Frameworks */,
@@ -98,9 +131,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40D6AAE61776BB17008427C5 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				40D6AAE71776BB17008427C5 /* FMDatabase.h */,
+				40D6AAE81776BB17008427C5 /* FMDatabase.m */,
+				40D6AAE91776BB17008427C5 /* FMDatabaseAdditions.h */,
+				40D6AAEA1776BB17008427C5 /* FMDatabaseAdditions.m */,
+				40D6AAEB1776BB17008427C5 /* FMDatabasePool.h */,
+				40D6AAEC1776BB17008427C5 /* FMDatabasePool.m */,
+				40D6AAED1776BB17008427C5 /* FMDatabaseQueue.h */,
+				40D6AAEE1776BB17008427C5 /* FMDatabaseQueue.m */,
+				40D6AAF01776BB17008427C5 /* FMResultSet.h */,
+				40D6AAF11776BB17008427C5 /* FMResultSet.m */,
+			);
+			name = FMDB;
+			path = ../../../fmdb/src;
+			sourceTree = "<group>";
+		};
+		40D6AB03177735B5008427C5 /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				40D6AB00177735AF008427C5 /* OpenUDID.h */,
+				40D6AB01177735AF008427C5 /* OpenUDID.m */,
+			);
+			name = OpenUDID;
+			sourceTree = "<group>";
+		};
 		40EE5706176DAF310085F6C3 = {
 			isa = PBXGroup;
 			children = (
+				40D6AAF81776F9E4008427C5 /* libsqlite3.dylib */,
 				40EE5718176DAF310085F6C3 /* Example */,
 				40EE5711176DAF310085F6C3 /* Frameworks */,
 				40EE5710176DAF310085F6C3 /* Products */,
@@ -177,6 +238,10 @@
 		40EE5743176DAFE80085F6C3 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				40D6AB0417773B81008427C5 /* NSDate+SSToolkitAdditions.h */,
+				40D6AB0517773B81008427C5 /* NSDate+SSToolkitAdditions.m */,
+				40D6AB03177735B5008427C5 /* OpenUDID */,
+				40D6AAE61776BB17008427C5 /* FMDB */,
 				40B583501772E11D00D2D6FA /* NSArray+SSToolkitAdditions.h */,
 				40B583511772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m */,
 				40EE576E176F18570085F6C3 /* NSDate+nLibrary.h */,
@@ -204,6 +269,8 @@
 				40EE5769176F11F50085F6C3 /* NextDayClientObject.m */,
 				40EE576B176F12D40085F6C3 /* NextDayClientRequest.h */,
 				40EE576C176F12D40085F6C3 /* NextDayClientRequest.m */,
+				40D6AAFD1776FC49008427C5 /* NextDayClientEnvVars.h */,
+				40D6AAFE1776FC49008427C5 /* NextDayClientEnvVars.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +292,10 @@
 			children = (
 				40EE575D176F11870085F6C3 /* NextDayClient+Calendar.h */,
 				40EE575E176F11870085F6C3 /* NextDayClient+Calendar.m */,
+				40D6AAFA1776FAB7008427C5 /* NextDayClient+EnvVars.h */,
+				40D6AAFB1776FAB7008427C5 /* NextDayClient+EnvVars.m */,
+				40D6AAE31776BA47008427C5 /* NextDayClient+Log.h */,
+				40D6AAE41776BA47008427C5 /* NextDayClient+Log.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -318,6 +389,16 @@
 				40EE5770176F18570085F6C3 /* NSDate+nLibrary.m in Sources */,
 				40EE5773176F44230085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */,
 				40B583521772E11D00D2D6FA /* NSArray+SSToolkitAdditions.m in Sources */,
+				40D6AAE51776BA47008427C5 /* NextDayClient+Log.m in Sources */,
+				40D6AAF21776BB17008427C5 /* FMDatabase.m in Sources */,
+				40D6AAF31776BB17008427C5 /* FMDatabaseAdditions.m in Sources */,
+				40D6AAF41776BB17008427C5 /* FMDatabasePool.m in Sources */,
+				40D6AAF51776BB17008427C5 /* FMDatabaseQueue.m in Sources */,
+				40D6AAF71776BB17008427C5 /* FMResultSet.m in Sources */,
+				40D6AAFC1776FAB7008427C5 /* NextDayClient+EnvVars.m in Sources */,
+				40D6AAFF1776FC49008427C5 /* NextDayClientEnvVars.m in Sources */,
+				40D6AB02177735AF008427C5 /* OpenUDID.m in Sources */,
+				40D6AB0617773B81008427C5 /* NSDate+SSToolkitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

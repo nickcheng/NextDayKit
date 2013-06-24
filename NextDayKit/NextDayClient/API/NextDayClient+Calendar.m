@@ -47,7 +47,6 @@
       if (completionHandler != nil)
         completionHandler(YES, result, error);
     }
-
   }];
 }
 
@@ -87,7 +86,6 @@
       if (completionHandler != nil)
         completionHandler(YES, result, error);
     }
-    
   }];
 }
 
@@ -124,7 +122,6 @@
       if (completionHandler != nil)
         completionHandler(YES, result, error);
     }
-    
   }];
 }
 
