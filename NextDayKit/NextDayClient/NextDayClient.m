@@ -24,10 +24,13 @@
   NextDayClientReadyState _readyState;
   NSInteger _messageCount;
   NSMutableDictionary *_requestHandlers;
+  
+  BOOL _isEnvReady;
 }
 
 @synthesize readyState = _readyState;
 @synthesize messageCount = _messageCount;
+@synthesize isEnvReady = _isEnvReady;
 
 #pragma mark -
 #pragma mark Init
@@ -50,6 +53,7 @@
   _requestHandlers = [[NSMutableDictionary alloc] init];
   _readyState = NextDayClientReadyStateClosed;
   _sendQueueWhenConnecting = [[NSMutableArray alloc] init];
+  _isEnvReady = NO;
   
   return self;
 }
@@ -120,6 +124,7 @@
 - (void)resetVariables {
   self.messageCount = 1;
   [_requestHandlers removeAllObjects];
+  self.isEnvReady = NO;
 }
 
 - (void)processAPIMessage:(NSDictionary *)dict {
@@ -183,6 +188,11 @@
       [_sendQueueWhenConnecting removeObject:array];
       array = _sendQueueWhenConnecting.firstObject;
     }
+  }
+  
+  // Call connection opened handler
+  if (self.connectedHandler != nil) {
+    self.connectedHandler();
   }
 }
 

@@ -53,6 +53,7 @@
     
     NSString *status = responseDict[@"status"];
     if ([status isEqualToString:@"FAIL"]) {
+      self.isEnvReady = NO;
       // Handle error
       NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                            code:400
@@ -60,6 +61,7 @@
       if (completionHandler != nil)
         completionHandler(NO, nil, error);
     } else if ([status isEqualToString:@"OK"]) {
+      self.isEnvReady = YES;
       // Parse responseString and callback
       if (completionHandler != nil)
         completionHandler(YES, nil, error);

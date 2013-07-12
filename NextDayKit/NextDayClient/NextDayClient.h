@@ -18,11 +18,14 @@ typedef enum {
 @class NextDayClientRequest;
 
 typedef void (^NextDayClientResponseBlock)(NSDictionary *responseDict, NSError *error);
+typedef void (^NextDayClientEmptyBlock)();
 
 @interface NextDayClient : NSObject
 
 @property (nonatomic, assign, readonly) NextDayClientReadyState readyState;
 @property (nonatomic, assign) NSInteger messageCount;
+@property (nonatomic, assign) BOOL isEnvReady;
+@property (nonatomic, copy) NextDayClientEmptyBlock connectedHandler;
 
 + (instancetype)sharedClient;
 
