@@ -38,7 +38,7 @@
 }
 
 - (IBAction)Action2Tapped:(id)sender {
-  [[NextDayClient sharedClient] getLogDetailsFrom:@[@{@"source": @"out",@"sourceId":@"2"}]
+  [[NextDayClient sharedClient] getLogDetailsFrom:@[@{@"source": @"out", @"sourceId": @"1"}]
                                        completion:^(BOOL success, id result, NSError *error) {
                                          NSLog(@"Result: %@", result);
                                        }];
@@ -55,7 +55,7 @@
   //
   [NextDayClient sharedClient].connectedHandler = ^{
     NextDayClientEnvVars *ev = [[NextDayClientEnvVars alloc] init];
-    ev.weiboID = @"1641430494"; // Nick: 1655001967; Jacob: 1641430494
+    ev.weiboID = @"1655001967"; // Nick: 1655001967; Jacob: 1641430494
     ev.weiboToken = @"2.00B5qMGDx9UQnB16a6daad5cPgu2bB";
     ev.weiboTokenExpiresAt = [[[NSDate date] dateByAddingTimeInterval:60*60*24] ISO8601String];
     ev.deviceId = [OpenUDID value];
