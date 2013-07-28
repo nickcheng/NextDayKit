@@ -32,6 +32,7 @@
     ev.weiboToken = [NCWeiboClient sharedClient].authentication.accessToken;
     ev.weiboName = [NCWeiboClient sharedClient].authentication.user.screenName;
     ev.weiboAvatar = [NCWeiboClient sharedClient].authentication.user.profileLargeImageUrl;
+    ev.weiboGender = [NCWeiboClient sharedClient].authentication.user.gender;
     ev.weiboTokenExpiresAt = [NCWeiboClient sharedClient].authentication.expirationDate.ISO8601String;
     ev.deviceId = [nHelper UDID];
     // todo: add apntoken

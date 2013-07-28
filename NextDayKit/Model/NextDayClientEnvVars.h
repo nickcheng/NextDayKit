@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *weiboID; // REQUIRED
 @property (nonatomic, strong) NSString *weiboName;
 @property (nonatomic, strong) NSString *weiboAvatar;
+@property (nonatomic, assign) NSInteger weiboGender;
 @property (nonatomic, strong) NSString *weiboToken; // REQUIRED
 @property (nonatomic, strong) NSString *weiboTokenExpiresAt; // REQUIRED
 @property (nonatomic, strong) NSString *apnToken;

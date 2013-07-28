@@ -11,7 +11,7 @@
 #import "NextDayClientConfig.h"
 #import "NextDayClient+Bridge.h"
 
-static const NSInteger kPageCount = 2;
+static const NSInteger kPageCount = 10;
 
 @implementation NextDayClient (Log)
 
@@ -36,7 +36,7 @@ static const NSInteger kPageCount = 2;
 
 - (void)subscribeLogFromTS:(NSTimeInterval)ts partCompletion:(NextDayClientCompletionBlock)completionHandler {
   __block NextDayClientCompletionBlock block = [^(BOOL success, id result, NSError *error) {
-    if (!success) {
+    if (!success || result == [NSNull null]) {
       if (completionHandler != nil)
         completionHandler(NO, nil, error);
       return;

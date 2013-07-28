@@ -1,0 +1,55 @@
+//
+//  NextDayClientGiftInboxItem.m
+//  NextDayKit
+//
+//  Created by nickcheng on 13-7-19.
+//  Copyright (c) 2013年 nx. All rights reserved.
+//
+
+#import "NextDayClientGiftInboxItem.h"
+
+@implementation NextDayClientGiftInboxItem {
+  double _senderID;
+  double _giftID;
+  NSString *_sourceID;
+  NSString *_senderDeviceID;
+  BOOL _read;
+  NSString *_createDeviceID;
+  NSDate *_createTime;
+  NSString *_accessDeviceID;
+  NSDate *_accessTime;
+  NSDate *_scheduledDate;
+  double _ts;
+  NSString *_giftBGColor;
+  NSString *_giftImageURL;
+  NSString *_giftPhrase1;
+  NSString *_giftPhrase2;
+  NSString *_giftEvent;
+  double _sndrWeiboID;
+  NSString *_sndrWeiboName;
+  NSString *_sndrWeiboAvatar;
+  NSInteger _sndrWeiboGender;
+}
+
+@synthesize senderID = _senderID;
+@synthesize giftID = _giftID;
+@synthesize sourceID = _sourceID;
+@synthesize senderDeviceID = _senderDeviceID;
+@synthesize read = _read;
+@synthesize createDeviceID = _createDeviceID;
+@synthesize createTime = _createTime;
+@synthesize accessDeviceID = _accessDeviceID;
+@synthesize accessTime = _accessTime;
+@synthesize scheduledDate = _scheduledDate;
+@synthesize ts = _ts;
+@synthesize giftBGColor = _giftBGColor;
+@synthesize giftImageURL = _giftImageURL;
+@synthesize giftPhrase1 = _giftPhrase1;
+@synthesize giftPhrase2 = _giftPhrase2;
+@synthesize giftEvent = _giftEvent;
+@synthesize sndrWeiboID = _sndrWeiboID;
+@synthesize sndrWeiboName = _sndrWeiboName;
+@synthesize sndrWeiboAvatar = _sndrWeiboAvatar;
+@synthesize sndrWeiboGender = _sndrWeiboGender;
+
+@end

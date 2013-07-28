@@ -30,6 +30,7 @@
     return;
   }
   [pr setObject:envVars.weiboID forKey:@"weiboId"];
+  [pr setObject:[NSNumber numberWithInteger:envVars.weiboGender] forKey:@"weiboGender"];
   [pr setObject:envVars.weiboToken forKey:@"weiboToken"];
   [pr setObject:envVars.weiboTokenExpiresAt forKey:@"weiboTokenExpiresAt"];
   [pr setObject:envVars.deviceId forKey:@"deviceId"];

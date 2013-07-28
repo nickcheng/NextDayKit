@@ -12,6 +12,7 @@
   NSString *_weiboID;
   NSString *_weiboName;
   NSString *_weiboAvatar;
+  NSInteger _weiboGender;
   NSString *_weiboToken;
   NSString *_weiboTokenExpiresAt;
   NSString *_apnToken;
@@ -21,6 +22,7 @@
 @synthesize weiboID = _weiboID;
 @synthesize weiboName = _weiboName;
 @synthesize weiboAvatar = _weiboAvatar;
+@synthesize weiboGender = _weiboGender;
 @synthesize weiboToken = _weiboToken;
 @synthesize weiboTokenExpiresAt = _weiboTokenExpiresAt;
 @synthesize apnToken = _apnToken;
@@ -37,6 +39,7 @@
   _weiboID = nil;
   _weiboName = nil;
   _weiboAvatar = nil;
+  _weiboGender = 0;
   _weiboToken = nil;
   _weiboTokenExpiresAt = nil;
   _apnToken = nil;
