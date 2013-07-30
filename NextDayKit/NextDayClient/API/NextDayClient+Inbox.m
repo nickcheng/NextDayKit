@@ -1,35 +1,30 @@
 //
-//  NextDayClient+Outbox.m
+//  NextDayClient+Inbox.m
 //  NextDayKit
 //
-//  Created by nickcheng on 13-7-3.
+//  Created by nickcheng on 13-7-28.
 //  Copyright (c) 2013年 nx. All rights reserved.
 //
 
-#import "NextDayClient+Outbox.h"
-#import "NextDayClientGiftData.h"
-#import "NextDayClientGiftReceiver.h"
+#import "NextDayClient+Inbox.h"
+#import "NextDayClient+Bridge.h"
 #import "NextDayClientRequest.h"
 #import "NextDayClientConfig.h"
-#import "NextDayClient+Bridge.h"
 
-@implementation NextDayClient (Outbox)
+@implementation NextDayClient (Inbox)
 
-- (void)sendGift:(NextDayClientGiftData *)gift
-      toReceiver:(NextDayClientGiftReceiver *)receiver
-      completion:(NextDayClientCompletionBlock)completionHandler {
+- (void)markInboxItemsReadByIds:(NSArray *)ids completion:(NextDayClientCompletionBlock)completionHandler {
   [self ensureEnvVarsReadyWithCompletion:^(BOOL success, id result, NSError *error) {
     if (!success) {
       if (completionHandler != nil)
         completionHandler(NO, nil, error);
       return;
     }
-    
+
     // Structure params
     NSDictionary *params = @{
-                             @"action": @"outbox.add",
-                             @"receivers": @[receiver.dict],
-                             @"data": gift.dict
+                             @"action": @"inbox.read",
+                             @"giftIds": ids
                              };
     
     // Structure request
@@ -62,7 +57,7 @@
   }];
 }
 
-- (void)deleteOutboxItemByID:(double)giftID inTS:(double)ts completion:(NextDayClientCompletionBlock)completionHandler {
+- (void)deleteInboxItemsByIds:(NSArray *)ids completion:(NextDayClientCompletionBlock)completionHandler {
   [self ensureEnvVarsReadyWithCompletion:^(BOOL success, id result, NSError *error) {
     if (!success) {
       if (completionHandler != nil)
@@ -72,9 +67,8 @@
     
     // Structure params
     NSDictionary *params = @{
-                             @"action": @"outbox.del",
-                             @"giftId": [NSNumber numberWithDouble:giftID],
-                             @"ts": [NSNumber numberWithDouble:ts]
+                             @"action": @"inbox.del",
+                             @"giftIds": ids
                              };
     
     // Structure request
@@ -89,20 +83,19 @@
         return;
       }
       
-      if (responseDict[@"status"]) {
-        NSString *status = responseDict[@"status"];
-        if ([status isEqualToString:@"OK"] || [status isEqualToString:@"CHANGED"]) {
-          NSMutableDictionary *result = responseDict[@"result"];
-          result[@"status"] = status;
-          if (completionHandler != nil)
-            completionHandler(YES, result, nil);
-        }
-      } else if (responseDict[@"error"]) {
+      NSString *status = responseDict[@"status"];
+      if ([status isEqualToString:@"FAIL"]) {
+        // Handle error
         NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                              code:400
-                                         userInfo:@{NSLocalizedDescriptionKey: responseDict[@"error"]}];
+                                         userInfo:[NSDictionary dictionaryWithObject:responseDict[@"error"] forKey:NSLocalizedDescriptionKey]];
         if (completionHandler != nil)
-          completionHandler(NO, responseDict, error);
+          completionHandler(NO, nil, error);
+      } else if ([status isEqualToString:@"OK"]) {
+        // Parse responseString and callback
+        NSArray *result = responseDict[@"result"];
+        if (completionHandler != nil)
+          completionHandler(YES, result, error);
       }
     }];
   }];

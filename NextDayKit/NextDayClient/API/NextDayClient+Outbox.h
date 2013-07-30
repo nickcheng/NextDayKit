@@ -17,4 +17,8 @@
       toReceiver:(NextDayClientGiftReceiver *)receiver
       completion:(NextDayClientCompletionBlock)completionHandler;
 
+- (void)deleteOutboxItemByID:(double)giftID
+                        inTS:(double)ts
+                  completion:(NextDayClientCompletionBlock)completionHandler;
+
 @end
