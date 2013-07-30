@@ -14,6 +14,9 @@
 #import "NextDayClientEnvVars.h"
 #import "OpenUDID.h"
 #import "NSDate+SSToolkitAdditions.h"
+#import "NextDayClientGiftData.h"
+#import "NextDayClientGiftReceiver.h"
+#import "NextDayClient+Outbox.h"
 
 @interface ViewController ()
 
@@ -38,10 +41,38 @@
 }
 
 - (IBAction)Action2Tapped:(id)sender {
-  [[NextDayClient sharedClient] getLogDetailsFrom:@[@{@"source": @"out", @"sourceId": @"1"}]
+  [[NextDayClient sharedClient] getLogDetailsFrom:@[@{@"source": @"out", @"sourceId": @"4"}]
                                        completion:^(BOOL success, id result, NSError *error) {
                                          NSLog(@"Result: %@", result);
                                        }];
+}
+
+- (IBAction)sendGiftTapped:(id)sender {
+  
+  // Build gift
+  NextDayClientGiftData *gift = [[NextDayClientGiftData alloc] init];
+  gift.backgroundColor = @"#000000";
+  gift.imageURL = @"{img}/userpic/0D15D885-2676-4729-B62F-5E54577CD629-26825-0001491991835669.jpg";
+  gift.phrase1 = @"这个是测试礼物";
+  gift.phrase2 = @"一堆一堆的礼物飞了过来啊吧哈啦!";
+  gift.event = @"愚蠢愚人节";
+  
+  // Build Recevier
+  NextDayClientGiftReceiver *receiver = [[NextDayClientGiftReceiver alloc] init];
+  receiver.weiboID = @"1655001967";
+  receiver.weiboName = @"Receiver";
+  receiver.weiboRemark = @"收件人";
+  receiver.weiboAvatar = @"http://tp1.sinaimg.cn/1404376560/180/0/1";
+  receiver.timezoneID = @"Asia/Shanghai"; // todo: Get timezone from user's location
+  receiver.scheduledDate = [NSString stringWithFormat:@"%d-%02d-%02d 00:00:01",
+                            2013, 7, 30];
+  
+  //
+  [[NextDayClient sharedClient] sendGift:gift
+                              toReceiver:receiver
+                              completion:^(BOOL success, id result, NSError *error) {
+                                NSLog(@"Result: %@; Error: %@", result, error);
+                              }];
 }
 
 - (void)viewDidLoad {
@@ -55,12 +86,15 @@
   //
   [NextDayClient sharedClient].connectedHandler = ^{
     NextDayClientEnvVars *ev = [[NextDayClientEnvVars alloc] init];
-    ev.weiboID = @"1655001967"; // Nick: 1655001967; Jacob: 1641430494
-    ev.weiboToken = @"2.00B5qMGDx9UQnB16a6daad5cPgu2bB";
+    ev.weiboID = @"2840117825"; // Nick: 1655001967; Jacob: 1641430494; Dev@nxmix.com: 2840117825
+    ev.weiboToken = @"2.00B5qMGDLRYaHEde7a79127bzhLSLC";
     ev.weiboTokenExpiresAt = [[[NSDate date] dateByAddingTimeInterval:60*60*24] ISO8601String];
     ev.deviceId = [OpenUDID value];
     [[NextDayClient sharedClient] setVars:ev completion:^(BOOL success, id result, NSError *error) {
-      NSLog(@"Env Set!");
+      if (success)
+        NSLog(@"Env Set!");
+      else
+        NSLog(@"Env set error: %@", error);
     }];
   };
 }
