@@ -20,6 +20,9 @@
   if (envVars.weiboID == nil
       || envVars.weiboToken == nil
       || envVars.weiboTokenExpiresAt == nil
+      || envVars.weiboName == nil
+      || envVars.weiboAvatar == nil
+      || envVars.weiboLocation == nil
       || envVars.deviceId == nil) {
     NDLE(@"Required params not found!");
     NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
@@ -34,9 +37,10 @@
   [pr setObject:envVars.weiboToken forKey:@"weiboToken"];
   [pr setObject:envVars.weiboTokenExpiresAt forKey:@"weiboTokenExpiresAt"];
   [pr setObject:envVars.deviceId forKey:@"deviceId"];
-  // Check other params
-  if (envVars.weiboName != nil) [pr setObject:envVars.weiboName forKey:@"weiboName"];
-  if (envVars.weiboAvatar != nil) [pr setObject:envVars.weiboAvatar forKey:@"weiboAvatar"];
+  [pr setObject:envVars.weiboName forKey:@"weiboName"];
+  [pr setObject:envVars.weiboAvatar forKey:@"weiboAvatar"];
+  [pr setObject:envVars.weiboLocation forKey:@"weiboLocation"];
+  // Check optional params
   if (envVars.apnToken != nil) [pr setObject:envVars.apnToken forKey:@"apnToken"];
   NSDictionary *params = pr;
   

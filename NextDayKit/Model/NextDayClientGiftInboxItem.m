@@ -29,6 +29,7 @@
   NSString *_sndrWeiboName;
   NSString *_sndrWeiboAvatar;
   NSInteger _sndrWeiboGender;
+  NSString *_sndrWeiboLocation;
 }
 
 @synthesize senderID = _senderID;
@@ -51,5 +52,6 @@
 @synthesize sndrWeiboName = _sndrWeiboName;
 @synthesize sndrWeiboAvatar = _sndrWeiboAvatar;
 @synthesize sndrWeiboGender = _sndrWeiboGender;
+@synthesize sndrWeiboLocation = _sndrWeiboLocation;
 
 @end

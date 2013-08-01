@@ -11,11 +11,12 @@
 @interface NextDayClientEnvVars : NextDayClientObject
 
 @property (nonatomic, strong) NSString *weiboID; // REQUIRED
-@property (nonatomic, strong) NSString *weiboName;
-@property (nonatomic, strong) NSString *weiboAvatar;
-@property (nonatomic, assign) NSInteger weiboGender;
+@property (nonatomic, strong) NSString *weiboName; // REQUIRED
+@property (nonatomic, strong) NSString *weiboAvatar; // REQUIRED
+@property (nonatomic, assign) NSInteger weiboGender; // REQUIRED
 @property (nonatomic, strong) NSString *weiboToken; // REQUIRED
 @property (nonatomic, strong) NSString *weiboTokenExpiresAt; // REQUIRED
+@property (nonatomic, strong) NSString *weiboLocation; // REQUIRED
 @property (nonatomic, strong) NSString *apnToken;
 @property (nonatomic, strong) NSString *deviceId; // REQUIRED
 

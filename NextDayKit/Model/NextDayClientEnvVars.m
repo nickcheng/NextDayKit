@@ -15,6 +15,7 @@
   NSInteger _weiboGender;
   NSString *_weiboToken;
   NSString *_weiboTokenExpiresAt;
+  NSString *_weiboLocation;
   NSString *_apnToken;
   NSString *_deviceId;
 }
@@ -25,6 +26,7 @@
 @synthesize weiboGender = _weiboGender;
 @synthesize weiboToken = _weiboToken;
 @synthesize weiboTokenExpiresAt = _weiboTokenExpiresAt;
+@synthesize weiboLocation = _weiboLocation;
 @synthesize apnToken = _apnToken;
 @synthesize deviceId = _deviceId;
 
@@ -42,6 +44,7 @@
   _weiboGender = 0;
   _weiboToken = nil;
   _weiboTokenExpiresAt = nil;
+  _weiboLocation = nil;
   _apnToken = nil;
   _deviceId = nil;
   

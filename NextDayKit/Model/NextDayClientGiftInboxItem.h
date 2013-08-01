@@ -30,7 +30,6 @@
 @property (nonatomic, strong) NSString *sndrWeiboName;
 @property (nonatomic, strong) NSString *sndrWeiboAvatar;
 @property (nonatomic, assign) NSInteger sndrWeiboGender;
-
-//- (NSDictionary *)dict;
+@property (nonatomic, strong) NSString *sndrWeiboLocation;
 
 @end

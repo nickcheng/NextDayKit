@@ -41,7 +41,7 @@
 }
 
 - (IBAction)Action2Tapped:(id)sender {
-  [[NextDayClient sharedClient] getLogDetailsFrom:@[@{@"source": @"out", @"sourceId": @"4"}]
+  [[NextDayClient sharedClient] getLogDetailsFrom:@[@{@"source": @"in", @"sourceId": @"2840117825+4"}]
                                        completion:^(BOOL success, id result, NSError *error) {
                                          NSLog(@"Result: %@", result);
                                        }];
@@ -89,6 +89,10 @@
     ev.weiboID = @"2840117825"; // Nick: 1655001967; Jacob: 1641430494; Dev@nxmix.com: 2840117825
     ev.weiboToken = @"2.00B5qMGDLRYaHEde7a79127bzhLSLC";
     ev.weiboTokenExpiresAt = [[[NSDate date] dateByAddingTimeInterval:60*60*24] ISO8601String];
+    ev.weiboAvatar = @"http://tp1.sinaimg.cn/1653971412/180/5650247490/1";
+    ev.weiboName = @"兔子劫机Jackey";
+    ev.weiboGender = 2;
+    ev.weiboLocation = @"月球上的某处";
     ev.deviceId = [OpenUDID value];
     [[NextDayClient sharedClient] setVars:ev completion:^(BOOL success, id result, NSError *error) {
       if (success)
