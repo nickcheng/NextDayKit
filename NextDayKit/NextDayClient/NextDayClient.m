@@ -95,6 +95,10 @@
                                      userInfo:@{NSLocalizedDescriptionKey: @"Connection is not open. Please check connection or try again later."}];
     if (handler != nil)
       handler(nil, error);
+    
+    // todo: Try to reconnect
+    [self connect];
+    
     return;
   }
   

@@ -11,8 +11,12 @@
 
 @interface NextDayClient (Log)
 
-- (void)subscribeLogFromTS:(NSTimeInterval)ts maxReturnCount:(NSInteger)count completion:(NextDayClientCompletionBlock)completionHandler;
-- (void)subscribeLogFromTS:(NSTimeInterval)ts partCompletion:(NextDayClientCompletionBlock)completionHandler;
-- (void)getLogDetailsFrom:(NSArray *)logArray completion:(NextDayClientCompletionBlock)completionHandler;
+- (void)subscribeLogFromTS:(NSTimeInterval)ts
+            maxReturnCount:(NSInteger)count
+                completion:(NextDayClientCompletionBlock)completionHandler;
+- (void)subscribeLogFromTS:(NSTimeInterval)ts
+            partCompletion:(NextDayClientCompletionBlock)partCompletionHandler;
+- (void)getLogDetailsFrom:(NSArray *)logArray
+               completion:(NextDayClientCompletionBlock)completionHandler;
 
 @end

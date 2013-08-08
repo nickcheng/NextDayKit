@@ -11,7 +11,7 @@
 #import "NextDayClientConfig.h"
 #import "NextDayClient+Bridge.h"
 
-static const NSInteger kPageCount = 10;
+static const NSInteger kPageCount = 20;
 
 @implementation NextDayClient (Log)
 
@@ -29,28 +29,31 @@ static const NSInteger kPageCount = 10;
     //
     NSDictionary *dict = result;
     if (completionHandler != nil)
-      completionHandler(YES, dict[@"result"], error);
+      completionHandler(YES, dict, error);
 
   }];
 }
 
-- (void)subscribeLogFromTS:(NSTimeInterval)ts partCompletion:(NextDayClientCompletionBlock)completionHandler {
+- (void)subscribeLogFromTS:(NSTimeInterval)ts partCompletion:(NextDayClientCompletionBlock)partCompletionHandler {
   __block NextDayClientCompletionBlock block = [^(BOOL success, id result, NSError *error) {
     if (!success || result == [NSNull null]) {
-      if (completionHandler != nil)
-        completionHandler(NO, nil, error);
+      if (partCompletionHandler != nil)
+        partCompletionHandler(NO, nil, error);
       return;
     }
 
     // Do handler
-    NSArray *arr = result;
-    if (completionHandler != nil)
-      completionHandler(YES, arr, error);
+    NSDictionary *dict = result;
+    if (partCompletionHandler != nil)
+      partCompletionHandler(YES, dict[@"result"], error);
 
     // Check if need to get more
-    NSDictionary *lastLog = arr.lastObject;
-    NSTimeInterval lastts = [lastLog[@"ts"] doubleValue];
-    [self subscribeLogFromTS:lastts maxReturnCount:kPageCount completion:block];
+    if ([dict[@"hasMore"] boolValue]) {
+      NSDictionary *lastLog = [dict[@"result"] lastObject];
+      NSTimeInterval lastts = [lastLog[@"ts"] doubleValue];
+      [self subscribeLogFromTS:lastts maxReturnCount:kPageCount completion:block];
+    } else
+      return;
   } copy];
   [self subscribeLogFromTS:ts maxReturnCount:kPageCount completion:block];
 }
@@ -81,19 +84,19 @@ static const NSInteger kPageCount = 10;
         return;
       }
       
-      NSString *status = responseDict[@"status"];
-      if ([status isEqualToString:@"FAIL"]) {
-        // Handle error
+      if (responseDict[@"status"]) {
+        NSString *status = responseDict[@"status"];
+        if ([status isEqualToString:@"OK"]) { // Parse responseString and callback
+          NSArray *result = responseDict[@"result"];
+          if (completionHandler != nil)
+            completionHandler(YES, result, error);
+        }
+      } else if (responseDict[@"error"]) {
         NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                              code:400
-                                         userInfo:[NSDictionary dictionaryWithObject:responseDict[@"error"] forKey:NSLocalizedDescriptionKey]];
+                                         userInfo:@{NSLocalizedDescriptionKey: responseDict[@"error"]}];
         if (completionHandler != nil)
-          completionHandler(NO, nil, error);
-      } else if ([status isEqualToString:@"OK"]) {
-        // Parse responseString and callback
-        NSDictionary *result = responseDict[@"result"];
-        if (completionHandler != nil)
-          completionHandler(YES, result, error);
+          completionHandler(NO, responseDict, error);
       }
     }];
   }];
@@ -129,17 +132,18 @@ static const NSInteger kPageCount = 10;
         return;
       }
       
-      NSString *status = responseDict[@"status"];
-      if ([status isEqualToString:@"FAIL"]) {
-        // Handle error
+      if (responseDict[@"status"]) {
+        NSString *status = responseDict[@"status"];
+        if ([status isEqualToString:@"OK"]) { // Parse responseString and callback
+          if (completionHandler != nil)
+            completionHandler(YES, responseDict, error);
+        }
+      } else if (responseDict[@"error"]) {
         NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                              code:400
-                                         userInfo:[NSDictionary dictionaryWithObject:responseDict[@"error"] forKey:NSLocalizedDescriptionKey]];
+                                         userInfo:@{NSLocalizedDescriptionKey: responseDict[@"error"]}];
         if (completionHandler != nil)
-          completionHandler(NO, nil, error);
-      } else if ([status isEqualToString:@"OK"]) {
-        if (completionHandler != nil)
-          completionHandler(YES, responseDict, error);
+          completionHandler(NO, responseDict, error);
       }
     }];
   }];

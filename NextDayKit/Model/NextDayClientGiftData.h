@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *phrase1;
 @property (nonatomic, strong) NSString *phrase2;
 @property (nonatomic, strong) NSString *event;
+@property (nonatomic, strong) NSString *previewImageURL;
 
 - (NSDictionary *)dict;
 

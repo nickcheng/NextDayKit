@@ -44,19 +44,19 @@
         return;
       }
       
-      NSString *status = responseDict[@"status"];
-      if ([status isEqualToString:@"FAIL"]) {
-        // Handle error
+      if (responseDict[@"status"]) {
+        NSString *status = responseDict[@"status"];
+        if ([status isEqualToString:@"OK"]) { // Parse responseString and callback
+          NSArray *result = responseDict[@"result"];
+          if (completionHandler != nil)
+            completionHandler(YES, result, error);
+        }
+      } else if (responseDict[@"error"]) {
         NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                              code:400
-                                         userInfo:[NSDictionary dictionaryWithObject:responseDict[@"error"] forKey:NSLocalizedDescriptionKey]];
+                                         userInfo:@{NSLocalizedDescriptionKey: responseDict[@"error"]}];
         if (completionHandler != nil)
-          completionHandler(NO, nil, error);
-      } else if ([status isEqualToString:@"OK"]) {
-        // Parse responseString and callback
-        NSArray *result = responseDict[@"result"];
-        if (completionHandler != nil)
-          completionHandler(YES, result, error);
+          completionHandler(NO, responseDict, error);
       }
     }];
   }];

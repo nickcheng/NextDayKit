@@ -14,6 +14,7 @@
   NSString *_phrase1;
   NSString *_phrase2;
   NSString *_event;
+  NSString *_previewImageURL;
 }
 
 @synthesize backgroundColor = _backgroundColor;
@@ -21,6 +22,7 @@
 @synthesize phrase1 = _phrase1;
 @synthesize phrase2 = _phrase2;
 @synthesize event = _event;
+@synthesize previewImageURL = _previewImageURL;
 
 #pragma mark -
 #pragma mark Init
@@ -35,6 +37,7 @@
   _phrase1 = nil;
   _phrase2 = nil;
   _event = nil;
+  _previewImageURL = nil;
   
   return self;
 }
@@ -48,7 +51,8 @@
                                @"background": self.backgroundColor
                                },
                            @"images": @{
-                               @"small": self.imageURL
+                               @"small": self.imageURL,
+                               @"smallWithDate": self.previewImageURL
                                },
                            @"text": @{
                                @"comment1": self.phrase1,
