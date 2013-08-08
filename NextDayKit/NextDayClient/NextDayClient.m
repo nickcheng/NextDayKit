@@ -226,12 +226,14 @@
   NDLI(@"WebSocket closed. Code:%d. reason:%@", code, reason);
   
   _webSocket = nil;
+  _readyState = NextDayClientReadyStateClosed;
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
   NDLI(@":( Websocket Failed With Error %@", error);
   
   _webSocket = nil;
+  _readyState = NextDayClientReadyStateClosed;
 }
 
 @end
