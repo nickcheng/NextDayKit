@@ -26,6 +26,8 @@
   NSMutableDictionary *_requestHandlers;
   
   BOOL _isEnvReady;
+  BOOL _triedFailReconnectFlag;
+  BOOL _triedSendReconnectFlag;
 }
 
 @synthesize readyState = _readyState;
@@ -54,6 +56,8 @@
   _readyState = NextDayClientReadyStateClosed;
   _sendQueueWhenConnecting = [[NSMutableArray alloc] init];
   _isEnvReady = NO;
+  _triedFailReconnectFlag = NO;
+  _triedSendReconnectFlag = NO;
   
   return self;
 }
@@ -88,17 +92,25 @@
     [_sendQueueWhenConnecting addObject:@[request, handler]];
     return;
   }
+  
   // Check connection. If need reconnect.
   if (self.readyState != NextDayClientReadyStateOpen) {
-    NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
-                                         code:400
-                                     userInfo:@{NSLocalizedDescriptionKey: @"Connection is not open. Please check connection or try again later."}];
-    if (handler != nil)
-      handler(nil, error);
-    
-    // todo: Try to reconnect
-    [self connect];
-    
+    if (!_triedSendReconnectFlag) {
+      _triedSendReconnectFlag = YES;
+      [_sendQueueWhenConnecting addObject:@[request, handler]];
+      //
+      _webSocket = nil;
+      [self initWebSocket];
+      [self connect];
+    } else {
+      NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
+                                           code:400
+                                       userInfo:@{NSLocalizedDescriptionKey: @"Connection is not open. Please check connection or try again later."}];
+      if (handler != nil)
+        handler(nil, error);
+      
+      _triedSendReconnectFlag = NO;
+    }
     return;
   }
   
@@ -126,9 +138,12 @@
 #pragma mark Private Methods
 
 - (void)resetVariables {
+  if (!_triedSendReconnectFlag)
+    [_requestHandlers removeAllObjects];
   self.messageCount = 1;
-  [_requestHandlers removeAllObjects];
   self.isEnvReady = NO;
+  _triedFailReconnectFlag = NO;
+  _triedSendReconnectFlag = NO;
 }
 
 - (void)processAPIMessage:(NSDictionary *)dict {
@@ -232,8 +247,16 @@
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
   NDLI(@":( Websocket Failed With Error %@", error);
   
+  //
   _webSocket = nil;
   _readyState = NextDayClientReadyStateClosed;
+  
+  // Reconnect once
+  if (!_triedFailReconnectFlag) {
+    _triedFailReconnectFlag = YES;
+    [self initWebSocket];
+    [self connect];
+  }
 }
 
 @end
