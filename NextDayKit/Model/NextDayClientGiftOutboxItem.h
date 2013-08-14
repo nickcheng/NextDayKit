@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *senderDeviceID;
 @property (nonatomic, assign) double ts;
 @property (nonatomic, assign) BOOL delivered;
+@property (nonatomic, assign) NSInteger weiboStatus;
 @property (nonatomic, assign) BOOL read;
 @property (nonatomic, strong) NSString *createDeviceID;
 @property (nonatomic, strong) NSDate *createTime;

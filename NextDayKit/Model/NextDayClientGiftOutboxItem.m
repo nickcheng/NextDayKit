@@ -13,6 +13,7 @@
   NSString *_senderDeviceID;
   double _ts;
   BOOL _delivered;
+  NSInteger _weiboStatus;
   BOOL _read;
   NSString *_createDeviceID;
   NSDate *_createTime;
@@ -37,6 +38,7 @@
 @synthesize senderDeviceID = _senderDeviceID;
 @synthesize ts = _ts;
 @synthesize delivered = _delivered;
+@synthesize weiboStatus = _weiboStatus;
 @synthesize read = _read;
 @synthesize createDeviceID = _createDeviceID;
 @synthesize createTime = _createTime;
