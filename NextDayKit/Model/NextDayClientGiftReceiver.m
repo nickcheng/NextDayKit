@@ -15,6 +15,7 @@
   NSString *_weiboAvatar;
   NSString *_timezoneID;
   NSString *_scheduledDate;
+  NSInteger _weiboGender;
 }
 
 @synthesize weiboID = _weiboID;
@@ -23,6 +24,7 @@
 @synthesize weiboAvatar = _weiboAvatar;
 @synthesize timezoneID = _timezoneID;
 @synthesize scheduledDate = _scheduledDate;
+@synthesize weiboGender = _weiboGender;
 
 #pragma mark -
 #pragma mark Init
@@ -38,6 +40,7 @@
   _weiboAvatar = nil;
   _timezoneID = nil;
   _scheduledDate = nil;
+  _weiboGender = 0;
   
   return self;
 }
@@ -52,7 +55,8 @@
                            @"weiboRemark": self.weiboRemark,
                            @"weiboAvatar": self.weiboAvatar,
                            @"timezoneId": self.timezoneID,
-                           @"scheduledDate": self.scheduledDate
+                           @"scheduledDate": self.scheduledDate,
+                           @"weiboGender": [NSNumber numberWithInteger:self.weiboGender]
                            };
   
   return result;
