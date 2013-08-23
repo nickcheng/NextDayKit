@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4000D29517C4EC7A001BD1AF /* DBManager+Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 4000D29417C4EC7A001BD1AF /* DBManager+Consts.m */; };
+		4000D29817C4ECB8001BD1AF /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4000D29717C4ECB8001BD1AF /* DBManager.m */; };
+		4000D2A317C50041001BD1AF /* NSArray+nLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4000D2A017C50041001BD1AF /* NSArray+nLibrary.m */; };
+		4000D2A417C50041001BD1AF /* NSDictionary+nLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4000D2A217C50041001BD1AF /* NSDictionary+nLibrary.m */; };
 		4034139B1793FBA8005BC48B /* NextDayClient+Outbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 403413991793FBA8005BC48B /* NextDayClient+Outbox.m */; };
 		4034139E1793FBBA005BC48B /* NextDayClient+Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4034139C1793FBBA005BC48B /* NextDayClient+Bridge.m */; };
 		403413B61793FBCB005BC48B /* NCWeiboAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 403413A21793FBCB005BC48B /* NCWeiboAuthentication.m */; };
@@ -45,6 +49,9 @@
 		403414171793FF5F005BC48B /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 403414111793FF5F005BC48B /* DDLog.m */; };
 		403414181793FF5F005BC48B /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 403414131793FF5F005BC48B /* DDTTYLogger.m */; };
 		4034141B1793FF84005BC48B /* LayoutTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 403414191793FF84005BC48B /* LayoutTemplate.m */; };
+		4045271517C33F03007BC2E5 /* NextDayClient+Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045271417C33F03007BC2E5 /* NextDayClient+Users.m */; };
+		4045271817C33F2E007BC2E5 /* NextDayClient+Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045271717C33F2E007BC2E5 /* NextDayClient+Consts.m */; };
+		4045272117C35899007BC2E5 /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045272017C35899007BC2E5 /* Consts.m */; };
 		4063084917A7611D0036CF14 /* NextDayClient+Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4063084717A7611D0036CF14 /* NextDayClient+Inbox.m */; };
 		4063084C17A7614F0036CF14 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4063084A17A7614F0036CF14 /* MBProgressHUD.m */; };
 		4063084F17A761800036CF14 /* UIView+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4063084D17A761800036CF14 /* UIView+SSToolkitAdditions.m */; };
@@ -104,6 +111,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4000D29317C4EC7A001BD1AF /* DBManager+Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DBManager+Consts.h"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/DB/DBManager+Consts.h"; sourceTree = "<group>"; };
+		4000D29417C4EC7A001BD1AF /* DBManager+Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DBManager+Consts.m"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/DB/DBManager+Consts.m"; sourceTree = "<group>"; };
+		4000D29617C4ECB8001BD1AF /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBManager.h; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/DB/DBManager.h"; sourceTree = "<group>"; };
+		4000D29717C4ECB8001BD1AF /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/DB/DBManager.m"; sourceTree = "<group>"; };
+		4000D29F17C50041001BD1AF /* NSArray+nLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+nLibrary.h"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Library/nLibrary/NSArray+nLibrary.h"; sourceTree = "<group>"; };
+		4000D2A017C50041001BD1AF /* NSArray+nLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+nLibrary.m"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Library/nLibrary/NSArray+nLibrary.m"; sourceTree = "<group>"; };
+		4000D2A117C50041001BD1AF /* NSDictionary+nLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+nLibrary.h"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Library/nLibrary/NSDictionary+nLibrary.h"; sourceTree = "<group>"; };
+		4000D2A217C50041001BD1AF /* NSDictionary+nLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+nLibrary.m"; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Library/nLibrary/NSDictionary+nLibrary.m"; sourceTree = "<group>"; };
 		403413991793FBA8005BC48B /* NextDayClient+Outbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Outbox.m"; sourceTree = "<group>"; };
 		4034139A1793FBA8005BC48B /* NextDayClient+Outbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+Outbox.h"; sourceTree = "<group>"; };
 		4034139C1793FBBA005BC48B /* NextDayClient+Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Bridge.m"; sourceTree = "<group>"; };
@@ -183,6 +198,12 @@
 		403414131793FF5F005BC48B /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		403414191793FF84005BC48B /* LayoutTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayoutTemplate.m; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/Data/LayoutTemplate.m"; sourceTree = "<group>"; };
 		4034141A1793FF84005BC48B /* LayoutTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayoutTemplate.h; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/Data/LayoutTemplate.h"; sourceTree = "<group>"; };
+		4045271317C33F03007BC2E5 /* NextDayClient+Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+Users.h"; sourceTree = "<group>"; };
+		4045271417C33F03007BC2E5 /* NextDayClient+Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Users.m"; sourceTree = "<group>"; };
+		4045271617C33F2E007BC2E5 /* NextDayClient+Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+Consts.h"; sourceTree = "<group>"; };
+		4045271717C33F2E007BC2E5 /* NextDayClient+Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Consts.m"; sourceTree = "<group>"; };
+		4045271F17C35899007BC2E5 /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Consts.h; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/Data/Consts.h"; sourceTree = "<group>"; };
+		4045272017C35899007BC2E5 /* Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Consts.m; path = "../../../../../Work/NextDay@nxmix/Code/nextday/NextDay/NextDay/Classes/Data/Consts.m"; sourceTree = "<group>"; };
 		4063084717A7611D0036CF14 /* NextDayClient+Inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+Inbox.m"; sourceTree = "<group>"; };
 		4063084817A7611D0036CF14 /* NextDayClient+Inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+Inbox.h"; sourceTree = "<group>"; };
 		4063084A17A7614F0036CF14 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../../../MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
@@ -398,6 +419,16 @@
 		403413EF1793FC89005BC48B /* NextDay */ = {
 			isa = PBXGroup;
 			children = (
+				4000D29F17C50041001BD1AF /* NSArray+nLibrary.h */,
+				4000D2A017C50041001BD1AF /* NSArray+nLibrary.m */,
+				4000D2A117C50041001BD1AF /* NSDictionary+nLibrary.h */,
+				4000D2A217C50041001BD1AF /* NSDictionary+nLibrary.m */,
+				4000D29617C4ECB8001BD1AF /* DBManager.h */,
+				4000D29717C4ECB8001BD1AF /* DBManager.m */,
+				4000D29317C4EC7A001BD1AF /* DBManager+Consts.h */,
+				4000D29417C4EC7A001BD1AF /* DBManager+Consts.m */,
+				4045271F17C35899007BC2E5 /* Consts.h */,
+				4045272017C35899007BC2E5 /* Consts.m */,
 				403414191793FF84005BC48B /* LayoutTemplate.m */,
 				4034141A1793FF84005BC48B /* LayoutTemplate.h */,
 				40EE576E176F18570085F6C3 /* NSDate+nLibrary.h */,
@@ -405,8 +436,8 @@
 				403413F11793FCD1005BC48B /* UIImage+nLibrary.h */,
 				403413F21793FCD1005BC48B /* UIImage+nLibrary.m */,
 				403413F01793FC96005BC48B /* Constants.h */,
-				403413EC1793FC75005BC48B /* SingletonData.m */,
 				403413ED1793FC75005BC48B /* SingletonData.h */,
+				403413EC1793FC75005BC48B /* SingletonData.m */,
 				403413E91793FC53005BC48B /* nHelper.m */,
 				403413EA1793FC53005BC48B /* nHelper.h */,
 			);
@@ -621,11 +652,11 @@
 		40EE5743176DAFE80085F6C3 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				403413EF1793FC89005BC48B /* NextDay */,
 				4063085017A7619A0036CF14 /* GPUImage */,
 				403414091793FF5F005BC48B /* Lumberjack */,
 				403414081793FE12005BC48B /* MBProgressHUD */,
 				403413FE1793FDE9005BC48B /* NCChineseConverter */,
-				403413EF1793FC89005BC48B /* NextDay */,
 				403413E21793FC39005BC48B /* SSKeychain */,
 				403413C51793FC10005BC48B /* AFNetworking */,
 				4034139F1793FBCB005BC48B /* NCWeibo */,
@@ -682,6 +713,8 @@
 		40EE575C176F11870085F6C3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4045271317C33F03007BC2E5 /* NextDayClient+Users.h */,
+				4045271417C33F03007BC2E5 /* NextDayClient+Users.m */,
 				40EE575D176F11870085F6C3 /* NextDayClient+Calendar.h */,
 				40EE575E176F11870085F6C3 /* NextDayClient+Calendar.m */,
 				40D6AAFA1776FAB7008427C5 /* NextDayClient+EnvVars.h */,
@@ -692,6 +725,8 @@
 				4063084717A7611D0036CF14 /* NextDayClient+Inbox.m */,
 				4034139A1793FBA8005BC48B /* NextDayClient+Outbox.h */,
 				403413991793FBA8005BC48B /* NextDayClient+Outbox.m */,
+				4045271617C33F2E007BC2E5 /* NextDayClient+Consts.h */,
+				4045271717C33F2E007BC2E5 /* NextDayClient+Consts.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -772,15 +807,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4000D29517C4EC7A001BD1AF /* DBManager+Consts.m in Sources */,
 				40EE571F176DAF310085F6C3 /* main.m in Sources */,
 				40EE5723176DAF310085F6C3 /* AppDelegate.m in Sources */,
 				40EE572C176DAF310085F6C3 /* ViewController.m in Sources */,
 				40EE5740176DAFDD0085F6C3 /* base64.c in Sources */,
+				4000D2A317C50041001BD1AF /* NSArray+nLibrary.m in Sources */,
 				40EE5741176DAFDD0085F6C3 /* NSData+SRB64Additions.m in Sources */,
 				40EE5742176DAFDD0085F6C3 /* SRWebSocket.m in Sources */,
 				40EE5764176F11870085F6C3 /* NextDayClient+Calendar.m in Sources */,
 				40EE5766176F11870085F6C3 /* NextDayClient.m in Sources */,
 				40EE576A176F11F50085F6C3 /* NextDayClientObject.m in Sources */,
+				4045272117C35899007BC2E5 /* Consts.m in Sources */,
 				40EE576D176F12D40085F6C3 /* NextDayClientRequest.m in Sources */,
 				40EE5770176F18570085F6C3 /* NSDate+nLibrary.m in Sources */,
 				40EE5773176F44230085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */,
@@ -809,9 +847,12 @@
 				403413C31793FBE4005BC48B /* NextDayClientGiftReceiver.m in Sources */,
 				403413C41793FBE4005BC48B /* NextDayClientGiftData.m in Sources */,
 				403413D91793FC10005BC48B /* AFHTTPClient.m in Sources */,
+				4000D29817C4ECB8001BD1AF /* DBManager.m in Sources */,
+				4045271517C33F03007BC2E5 /* NextDayClient+Users.m in Sources */,
 				403413DA1793FC10005BC48B /* AFHTTPRequestOperation.m in Sources */,
 				403413DB1793FC10005BC48B /* AFImageRequestOperation.m in Sources */,
 				403413DC1793FC10005BC48B /* AFJSONRequestOperation.m in Sources */,
+				4000D2A417C50041001BD1AF /* NSDictionary+nLibrary.m in Sources */,
 				403413DD1793FC10005BC48B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				403413DE1793FC10005BC48B /* AFPropertyListRequestOperation.m in Sources */,
 				403413DF1793FC10005BC48B /* AFURLConnectionOperation.m in Sources */,
@@ -847,6 +888,7 @@
 				4063087117A767050036CF14 /* GPUImageOutput.m in Sources */,
 				4063087217A767050036CF14 /* GPUImageTwoPassFilter.m in Sources */,
 				4063087317A767050036CF14 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
+				4045271817C33F2E007BC2E5 /* NextDayClient+Consts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

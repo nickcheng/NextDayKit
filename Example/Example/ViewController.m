@@ -17,6 +17,9 @@
 #import "NextDayClientGiftData.h"
 #import "NextDayClientGiftReceiver.h"
 #import "NextDayClient+Outbox.h"
+#import "NextDayClient+Consts.h"
+#import "SingletonData.h"
+#import "Consts.h"
 
 @interface ViewController ()
 
@@ -73,6 +76,55 @@
                               completion:^(BOOL success, id result, NSError *error) {
                                 NSLog(@"Result: %@; Error: %@", result, error);
                               }];
+}
+
+- (IBAction)getConstsTableNameTapped:(id)sender {
+  [[NextDayClient sharedClient] getAllTableNameAndVersionWithCompletion:^(BOOL success, id result, NSError *error) {
+    NSLog(@"%@", result);
+  }];
+}
+
+- (IBAction)getConstTableTapped:(id)sender {
+  NSArray *array = @[
+                     @{
+                       @"name": @"asset",
+                       @"version": @0
+                       },
+                     @{
+                       @"name": @"colors",
+                       @"version": @0
+                       },
+                     @{
+                       @"name": @"config",
+                       @"version": @0
+                       },
+                     @{
+                       @"name": @"holiday/en-us",
+                       @"version": @0
+                       },
+                     @{
+                       @"name": @"holiday/zh-cn",
+                       @"version": @0
+                       },
+                     @{
+                       @"name": @"short_timezone",
+                       @"version": @0
+                       },
+                     @{
+                       @"name": @"weibo_province",
+                       @"version": @0
+                       },
+                     @{
+                       @"name": @"upload",
+                       @"version": @0
+                       },
+                     ];
+  [[NextDayClient sharedClient] getTableByNameAndVersion:array completion:^(BOOL success, id result, NSError *error) {
+    NSDictionary *dict = result;
+    NSLog(@"%@", dict);
+    
+    //
+  }];
 }
 
 - (void)viewDidLoad {
