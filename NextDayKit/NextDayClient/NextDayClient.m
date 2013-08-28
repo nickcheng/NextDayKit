@@ -63,16 +63,6 @@
 }
 
 #pragma mark -
-#pragma mark Getter / Setter
-
-- (NextDayClientReadyState)readyState {
-  if (_webSocket != nil)
-    _readyState = (NextDayClientReadyState)_webSocket.readyState;
-    
-  return _readyState;
-}
-
-#pragma mark -
 #pragma mark Public Methods
 
 - (void)initClientWithCertificate:(NSString *)certURL andCipher:(NSString *)cipher {
@@ -82,8 +72,10 @@
 }
 
 - (void)connect {
-  if (_webSocket.readyState != SR_OPEN)
+  if (_webSocket.readyState != SR_OPEN) {
     [_webSocket open];
+    _readyState = NextDayClientReadyStateConnecting;
+  }
 }
 
 - (void)send:(NextDayClientRequest *)request completion:(NextDayClientResponseBlock)handler {
@@ -93,7 +85,7 @@
     return;
   }
   
-  // Check connection. If need reconnect.
+  // Check connection. If need, reconnect!
   if (self.readyState != NextDayClientReadyStateOpen) {
     if (!_triedSendReconnectFlag) {
       _triedSendReconnectFlag = YES;
@@ -129,6 +121,7 @@
   NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 
   // Send json
+  // 发送前要确保已经 message count 已经 reset
   NDLI(@"Sending No.%d message: %@", request.messageCount, jsonString);
   [_webSocket send:jsonString];
   _requestHandlers[[NSNumber numberWithInteger:request.messageCount]] = handler;
@@ -194,6 +187,9 @@
   // Reset MessageCount
   NDLI(@"Reset MessageCount. Last one was:%d", self.messageCount);
   [self resetVariables];
+  
+  //
+  _readyState = NextDayClientReadyStateOpen;
   
   // Process requests sent when connecting
   if (_sendQueueWhenConnecting != nil && _sendQueueWhenConnecting.count > 0) {
