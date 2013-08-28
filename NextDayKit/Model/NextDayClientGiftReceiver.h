@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *weiboName;
 @property (nonatomic, strong) NSString *weiboRemark;
 @property (nonatomic, strong) NSString *weiboAvatar;
-@property (nonatomic, strong) NSString *timezoneID;
+@property (nonatomic, strong) NSString *timezoneOffset;
 @property (nonatomic, strong) NSString *scheduledDate;
 @property (nonatomic, assign) NSInteger weiboGender;
 

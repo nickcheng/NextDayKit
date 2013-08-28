@@ -30,7 +30,7 @@
   NSString *_rcvrWeiboRemark;
   NSString *_rcvrWeiboAvatar;
   NSInteger _rcvrWeiboGender;
-  NSString *_rcvrTimezone;
+  NSString *_rcvrTZOffset;
   NSDate *_rcvrScheduledDate;
 }
 
@@ -54,7 +54,7 @@
 @synthesize rcvrWeiboRemark = _rcvrWeiboRemark;
 @synthesize rcvrWeiboAvatar = _rcvrWeiboAvatar;
 @synthesize rcvrWeiboGender = _rcvrWeiboGender;
-@synthesize rcvrTimezone = _rcvrTimezone;
+@synthesize rcvrTZOffset = _rcvrTZOffset;
 @synthesize rcvrScheduledDate = _rcvrScheduledDate;
 
 @end

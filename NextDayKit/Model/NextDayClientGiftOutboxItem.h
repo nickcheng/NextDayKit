@@ -30,7 +30,7 @@
 @property (nonatomic, strong) NSString *rcvrWeiboRemark;
 @property (nonatomic, strong) NSString *rcvrWeiboAvatar;
 @property (nonatomic, assign) NSInteger rcvrWeiboGender;
-@property (nonatomic, strong) NSString *rcvrTimezone;
+@property (nonatomic, strong) NSString *rcvrTZOffset;
 @property (nonatomic, strong) NSDate *rcvrScheduledDate;
 
 @end
