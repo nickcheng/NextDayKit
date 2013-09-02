@@ -24,10 +24,10 @@
       || envVars.weiboAvatar == nil
       || envVars.weiboLocation == nil
       || envVars.deviceId == nil) {
-    NDLE(@"Required params not found!");
+    NDLE(@"Required params not ready! Will not call set envvars.");
     NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                          code:404
-                                     userInfo:[NSDictionary dictionaryWithObject:@"Required params not found!" forKey:NSLocalizedDescriptionKey]];
+                                     userInfo:[NSDictionary dictionaryWithObject:@"Required params not ready!" forKey:NSLocalizedDescriptionKey]];
     if (completionHandler != nil)
       completionHandler(NO, nil, error);
     return;
