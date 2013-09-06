@@ -10,6 +10,8 @@
 #import "NextDayClientRequest.h"
 #import "NextDayClientConfig.h"
 
+static NSInteger kBatchSize = 50;
+
 @implementation NextDayClient (Users)
 
 - (void)checkNextDayUserFromArray:(NSArray *)idArray completion:(NextDayClientCompletionBlock)completionHandler {
@@ -46,7 +48,42 @@
         completionHandler(NO, responseDict, error);
     }
   }];
+}
 
+- (void)checkNextDayUserInBatchesFromArray:(NSArray *)idArray completion:(NextDayClientCompletionBlock)completionHandler {
+  NSMutableDictionary *finalResult = [[NSMutableDictionary alloc] init];
+  
+  NSRange range = NSMakeRange(0, kBatchSize > idArray.count ? idArray.count : kBatchSize);
+  NSArray *arr = [idArray subarrayWithRange:range];
+  
+  __block NSInteger ss = 0;
+  __block NextDayClientCompletionBlock block = ^(BOOL success, id result, NSError *error) {
+    if (success) {
+      NSDictionary *dict = result;
+      [finalResult addEntriesFromDictionary:dict];
+      
+      // Check ending
+      if (finalResult.count == idArray.count) {
+        DDLogInfo(@"Check NextDay user status in batches done!");
+        if (completionHandler)
+          completionHandler(YES, finalResult, nil);
+        return;
+      }
+      
+      // Do next
+      ss += 1;
+      NSRange range = NSMakeRange(ss * kBatchSize, ss * kBatchSize + kBatchSize > idArray.count ? idArray.count - ss * kBatchSize : kBatchSize);
+      NSArray *array = [idArray subarrayWithRange:range];
+      [self checkNextDayUserFromArray:array completion:block];
+
+    } else {
+      DDLogError(@"Check NextDay user status error:%@", error);
+      if (completionHandler)
+        completionHandler(NO, result, error);
+    }
+  };
+  
+  [self checkNextDayUserFromArray:arr completion:block];
 }
 
 @end
