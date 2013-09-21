@@ -14,6 +14,8 @@
 @implementation NextDayClient (EnvVars)
 
 - (void)setVars:(NextDayClientEnvVars *)envVars completion:(NextDayClientCompletionBlock)completionHandler {
+  self.envState = NextDayClientEnvStateDoing;
+  
   // Structure params
   NSMutableDictionary *pr = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"envVars.set", @"action", nil];
   // Check required params
@@ -42,6 +44,7 @@
   [pr setObject:envVars.weiboLocation forKey:@"weiboLocation"];
   // Check optional params
   if (envVars.apnToken != nil) [pr setObject:envVars.apnToken forKey:@"apnToken"];
+  if (envVars.version != nil) [pr setObject:envVars.version forKey:@"version"];
   NSDictionary *params = pr;
   
   // Structure request
@@ -59,13 +62,13 @@
     if (responseDict[@"status"]) {
       NSString *status = responseDict[@"status"];
       if ([status isEqualToString:@"OK"]) {
-        self.isEnvReady = YES;
+        self.envState = NextDayClientEnvStateReady;
         // Parse responseString and callback
         if (completionHandler != nil)
           completionHandler(YES, nil, error);
       }
     } else if (responseDict[@"error"]) {
-      self.isEnvReady = NO;
+      self.envState = NextDayClientEnvStateNone;
       NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                            code:400
                                        userInfo:@{NSLocalizedDescriptionKey: responseDict[@"error"]}];

@@ -20,6 +20,7 @@
 #import "NextDayClient+Consts.h"
 #import "SingletonData.h"
 #import "Consts.h"
+#import "NSDate+SSToolkitAdditions.h"
 
 @interface ViewController ()
 
@@ -66,7 +67,7 @@
   receiver.weiboName = @"Receiver";
   receiver.weiboRemark = @"收件人";
   receiver.weiboAvatar = @"http://tp1.sinaimg.cn/1404376560/180/0/1";
-  receiver.timezoneID = @"Asia/Shanghai"; // todo: Get timezone from user's location
+  receiver.timezoneOffset = @"+8:00"; // todo: Get timezone from user's location
   receiver.scheduledDate = [NSString stringWithFormat:@"%d-%02d-%02d 00:00:01",
                             2013, 7, 30];
   
@@ -99,7 +100,7 @@
                        @"version": @0
                        },
                      @{
-                       @"name": @"holiday/en-us",
+                       @"name": @"holiday",
                        @"version": @0
                        },
                      @{
@@ -132,6 +133,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+ 
 	//
   NSString *certPath = [[NSBundle mainBundle] pathForResource:@"client" ofType:@"p12"];
   [[NextDayClient sharedClient] initClientWithCertificate:certPath andCipher:@"123456"];

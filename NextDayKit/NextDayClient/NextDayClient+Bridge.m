@@ -19,13 +19,14 @@
 @implementation NextDayClient (Bridge)
 
 - (void)ensureEnvVarsReadyWithCompletion:(NextDayClientCompletionBlock)handler {
-  if (self.isEnvReady) {
+  if (self.envState == NextDayClientEnvStateReady) {
     if (handler != nil)
       handler(YES, nil, nil);
     return;
   }
   
   //
+  self.envState = NextDayClientEnvStateDoing;
   [[NCWeiboClient sharedClient] doAuthBeforeCallAPI:^{
     NextDayClientEnvVars *ev = [[NextDayClientEnvVars alloc] init];
     ev.weiboID = [NCWeiboClient sharedClient].authentication.userID;
@@ -36,7 +37,8 @@
     ev.weiboTokenExpiresAt = [NCWeiboClient sharedClient].authentication.expirationDate.ISO8601String;
     ev.weiboLocation = [NCWeiboClient sharedClient].authentication.user.location;
     ev.deviceId = [nHelper UDID];
-    // todo: add apntoken
+    ev.apnToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"devicetoken"];
+    ev.version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     [self setVars:ev completion:^(BOOL success, id result, NSError *error) {
       if (success) {
         if (handler != nil)
@@ -47,6 +49,7 @@
       }
     }];
   } andAuthErrorProcess:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+    self.envState = NextDayClientEnvStateNone;
     if (handler != nil)
       handler(NO, nil, error);
   }];  

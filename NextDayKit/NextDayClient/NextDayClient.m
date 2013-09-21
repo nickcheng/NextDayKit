@@ -25,14 +25,14 @@
   NSInteger _messageCount;
   NSMutableDictionary *_requestHandlers;
   
-  BOOL _isEnvReady;
+  NextDayClientEnvState _envState;
   BOOL _triedFailReconnectFlag;
   BOOL _triedSendReconnectFlag;
 }
 
 @synthesize readyState = _readyState;
 @synthesize messageCount = _messageCount;
-@synthesize isEnvReady = _isEnvReady;
+@synthesize envState = _envState;
 
 #pragma mark -
 #pragma mark Init
@@ -55,7 +55,7 @@
   _requestHandlers = [[NSMutableDictionary alloc] init];
   _readyState = NextDayClientReadyStateClosed;
   _sendQueueWhenConnecting = [[NSMutableArray alloc] init];
-  _isEnvReady = NO;
+  _envState = NextDayClientEnvStateNone;
   _triedFailReconnectFlag = NO;
   _triedSendReconnectFlag = NO;
   
@@ -134,7 +134,7 @@
   if (!_triedSendReconnectFlag)
     [_requestHandlers removeAllObjects];
   self.messageCount = 1;
-  self.isEnvReady = NO;
+  self.envState = NextDayClientEnvStateNone;
   _triedFailReconnectFlag = NO;
   _triedSendReconnectFlag = NO;
 }

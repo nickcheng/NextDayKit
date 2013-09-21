@@ -24,7 +24,7 @@
   NSString *_giftPhrase1;
   NSString *_giftPhrase2;
   NSString *_giftEvent;
-
+  double _giftts;
   double _rcvrWeiboID;
   NSString *_rcvrWeiboName;
   NSString *_rcvrWeiboRemark;
@@ -49,6 +49,7 @@
 @synthesize giftPhrase1 = _giftPhrase1;
 @synthesize giftPhrase2 = _giftPhrase2;
 @synthesize giftEvent = _giftEvent;
+@synthesize giftts = _giftts;
 @synthesize rcvrWeiboID = _rcvrWeiboID;
 @synthesize rcvrWeiboName = _rcvrWeiboName;
 @synthesize rcvrWeiboRemark = _rcvrWeiboRemark;

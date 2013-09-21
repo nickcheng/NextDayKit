@@ -15,6 +15,12 @@ typedef enum {
   NextDayClientReadyStateClosed,
 } NextDayClientReadyState;
 
+typedef enum {
+  NextDayClientEnvStateNone,
+  NextDayClientEnvStateDoing,
+  NextDayClientEnvStateReady,
+} NextDayClientEnvState;
+
 @class NextDayClientRequest;
 
 typedef void (^NextDayClientResponseBlock)(NSDictionary *responseDict, NSError *error);
@@ -24,7 +30,7 @@ typedef void (^NextDayClientEmptyBlock)();
 
 @property (nonatomic, assign, readonly) NextDayClientReadyState readyState;
 @property (nonatomic, assign) NSInteger messageCount;
-@property (nonatomic, assign) BOOL isEnvReady;
+@property (nonatomic, assign) NextDayClientEnvState envState;
 @property (nonatomic, copy) NextDayClientEmptyBlock connectedHandler;
 
 + (instancetype)sharedClient;

@@ -47,13 +47,10 @@ static const NSInteger kPageCount = 20;
     if (partCompletionHandler != nil)
       partCompletionHandler(YES, dict[@"result"], error);
 
-    // Check if need to get more
-    if ([dict[@"hasMore"] boolValue]) {
-      NSDictionary *lastLog = [dict[@"result"] lastObject];
-      NSTimeInterval lastts = [lastLog[@"ts"] doubleValue];
-      [self subscribeLogFromTS:lastts maxReturnCount:kPageCount completion:block];
-    } else
-      return;
+    // Continue subscribing no matter if need to get more
+    NSDictionary *lastLog = [dict[@"result"] lastObject];
+    NSTimeInterval lastts = [lastLog[@"ts"] doubleValue];
+    [self subscribeLogFromTS:lastts maxReturnCount:kPageCount completion:block];
   } copy];
   [self subscribeLogFromTS:ts maxReturnCount:kPageCount completion:block];
 }
