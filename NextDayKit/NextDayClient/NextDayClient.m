@@ -28,6 +28,9 @@
   NextDayClientEnvState _envState;
   BOOL _triedFailReconnectFlag;
   BOOL _triedSendReconnectFlag;
+  // For reconnect
+  BOOL _isReconnect;
+  NextDayClientEmptyBlock _reconnectHandler;
 }
 
 @synthesize readyState = _readyState;
@@ -58,6 +61,7 @@
   _envState = NextDayClientEnvStateNone;
   _triedFailReconnectFlag = NO;
   _triedSendReconnectFlag = NO;
+  _isReconnect = NO;
   
   return self;
 }
@@ -76,6 +80,13 @@
     [_webSocket open];
     _readyState = NextDayClientReadyStateConnecting;
   }
+}
+
+- (void)reconnectWithCompletion:(NextDayClientEmptyBlock)handler {
+  _isReconnect = YES;
+  _reconnectHandler = handler;
+  
+  [_webSocket close];
 }
 
 - (void)send:(NextDayClientRequest *)request completion:(NextDayClientResponseBlock)handler {
@@ -209,6 +220,11 @@
   if (self.connectedHandler != nil) {
     self.connectedHandler();
   }
+  // Call reconnect completion handler
+  if (_reconnectHandler) {
+    _reconnectHandler();
+    _reconnectHandler = nil;
+  }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
@@ -238,6 +254,12 @@
   
   _webSocket = nil;
   _readyState = NextDayClientReadyStateClosed;
+  
+  if (_isReconnect) {
+    _isReconnect = NO;
+    [self initWebSocket];
+    [self connect];
+  }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
@@ -246,7 +268,13 @@
   //
   _webSocket = nil;
   _readyState = NextDayClientReadyStateClosed;
-  
+
+  // Call reconnect completion handler
+  if (_reconnectHandler) {
+    _reconnectHandler();
+    _reconnectHandler = nil;
+  }
+
   // Reconnect once
   if (!_triedFailReconnectFlag) {
     _triedFailReconnectFlag = YES;

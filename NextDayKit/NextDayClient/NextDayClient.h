@@ -37,6 +37,7 @@ typedef void (^NextDayClientEmptyBlock)();
 
 - (void)initClientWithCertificate:(NSString *)certURL andCipher:(NSString *)cipher;
 - (void)connect;
+- (void)reconnectWithCompletion:(NextDayClientEmptyBlock)handler;
 - (void)send:(NextDayClientRequest *)request completion:(NextDayClientResponseBlock)handler;
 
 @end
