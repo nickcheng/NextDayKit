@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Next Experience Interactive. All rights reserved.
 //
 
-#define NEXTDAY_SERVERURL @"wss://test.nextday.im/1/ws/"
+#define NEXTDAY_SERVERURL @"wss://api.nextday.im/1/ws/"
 #define NEXTDAYCLIENT_ERRORDOMAIN @"im.nextday.nextdaykit"
 
 // Logging
