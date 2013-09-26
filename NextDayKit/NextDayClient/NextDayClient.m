@@ -83,10 +83,19 @@
 }
 
 - (void)reconnectWithCompletion:(NextDayClientEmptyBlock)handler {
-  _isReconnect = YES;
-  _reconnectHandler = handler;
+  if (_webSocket && _webSocket.readyState == SR_OPEN) {
+    _isReconnect = YES;
+    _reconnectHandler = handler;
   
-  [_webSocket close];
+    [_webSocket close];
+  } else {
+    if (!_webSocket){
+      [self initWebSocket];
+      [self connect];
+    }
+    if (handler)
+      handler();
+  }
 }
 
 - (void)send:(NextDayClientRequest *)request completion:(NextDayClientResponseBlock)handler {
@@ -179,7 +188,7 @@
   // Init Websocket connection
   if (_certData != nil && _certCipher.length > 0) {
     NSURL *url = [NSURL URLWithString:NEXTDAY_SERVERURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.f];
     _webSocket = [[SRWebSocket alloc] initWithURLRequest:request
                                        andClientCertData:_certData
                                      andClientCertCipher:_certCipher];
