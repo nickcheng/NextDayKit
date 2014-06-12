@@ -64,7 +64,7 @@ static NSInteger kBatchSize = 50;
       
       // Check ending
       if (finalResult.count == idArray.count) {
-        DDLogInfo(@"Check NextDay user status in batches done!");
+        NDLI(@"Check NextDay user status in batches done!");
         if (completionHandler)
           completionHandler(YES, finalResult, nil);
         return;
@@ -77,7 +77,7 @@ static NSInteger kBatchSize = 50;
       [self checkNextDayUserFromArray:array completion:block];
 
     } else {
-      DDLogError(@"Check NextDay user status error:%@", error);
+      NDLE(@"Check NextDay user status error:%@", error);
       if (completionHandler)
         completionHandler(NO, result, error);
     }

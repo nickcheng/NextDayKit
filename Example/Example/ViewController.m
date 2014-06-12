@@ -12,15 +12,10 @@
 #import "NextDayClient+Log.h"
 #import "NextDayClient+EnvVars.h"
 #import "NextDayClientEnvVars.h"
-#import "OpenUDID.h"
-#import "NSDate+SSToolkitAdditions.h"
 #import "NextDayClientGiftData.h"
 #import "NextDayClientGiftReceiver.h"
 #import "NextDayClient+Outbox.h"
 #import "NextDayClient+Consts.h"
-#import "SingletonData.h"
-#import "Consts.h"
-#import "NSDate+SSToolkitAdditions.h"
 
 @interface ViewController ()
 
@@ -132,7 +127,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+
+  double a = 1380211200.000000f;
+  NSDate *d = [NSDate dateWithTimeIntervalSince1970:a];
  
 	//
   NSString *certPath = [[NSBundle mainBundle] pathForResource:@"client" ofType:@"p12"];

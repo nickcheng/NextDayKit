@@ -10,7 +10,7 @@
 #import "SRWebSocket.h"
 #import "NextDayClientConfig.h"
 #import "NextDayClientRequest.h"
-#import "NSArray+SSToolkitAdditions.h"
+//#import "NSArray+SAMAdditions.h"
 
 @interface NextDayClient () <SRWebSocketDelegate>
 @end

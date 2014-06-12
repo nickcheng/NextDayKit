@@ -9,12 +9,11 @@
 #import "NextDayClient+Bridge.h"
 #import "NextDayClient+EnvVars.h"
 #import "NextDayClientEnvVars.h"
+#import "NextDayClientHelper.h"
 #import "NCWeiboClient.h"
 #import "NCWeiboAuthentication.h"
 #import "NCWeiboUser.h"
 #import "NCWeiboClient+HandlerBlocks.h"
-#import "nHelper.h"
-#import "NSDate+SSToolkitAdditions.h"
 
 @implementation NextDayClient (Bridge)
 
@@ -36,9 +35,9 @@
     ev.weiboGender = [NCWeiboClient sharedClient].authentication.user.gender;
     ev.weiboTokenExpiresAt = [NCWeiboClient sharedClient].authentication.expirationDate.ISO8601String;
     ev.weiboLocation = [NCWeiboClient sharedClient].authentication.user.location;
-    ev.deviceId = [nHelper UDID];
+    ev.deviceId = [[UIDevice currentDevice] identifierForVendor].UUIDString;
     ev.apnToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"devicetoken"];
-    ev.version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    ev.version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [self setVars:ev completion:^(BOOL success, id result, NSError *error) {
       if (success) {
         if (handler != nil)

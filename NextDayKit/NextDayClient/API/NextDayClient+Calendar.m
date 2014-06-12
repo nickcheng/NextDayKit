@@ -8,7 +8,7 @@
 
 #import "NextDayClient+Calendar.h"
 #import "NextDayClientRequest.h"
-#import "NSDate+nLibrary.h"
+#import "NextDayClientHelper.h"
 #import "NextDayClientConfig.h"
 
 @implementation NextDayClient (Calendar)
