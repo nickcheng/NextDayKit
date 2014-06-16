@@ -47,7 +47,7 @@
           handler(NO, result, error);
       }
     }];
-  } andAuthErrorProcess:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+  } andAuthErrorProcess:^(NSURLSessionDataTask *task, id responseObject, NSError *error) {
     self.envState = NextDayClientEnvStateNone;
     if (handler != nil)
       handler(NO, nil, error);

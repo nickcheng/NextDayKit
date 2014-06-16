@@ -1,0 +1,4 @@
+pod 'SSKeychain'
+pod 'MBProgressHUD'
+pod 'AFNetworking'
+pod 'SocketRocket', :git => 'https://github.com/nickcheng/SocketRocket.git'

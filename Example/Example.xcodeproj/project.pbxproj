@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FBF1197633B46159AF34488 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD40DF0AA6B454F88E1DC08 /* libPods.a */; };
 		4034139B1793FBA8005BC48B /* NextDayClient+Outbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 403413991793FBA8005BC48B /* NextDayClient+Outbox.m */; };
 		403413C31793FBE4005BC48B /* NextDayClientGiftReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 403413BF1793FBE4005BC48B /* NextDayClientGiftReceiver.m */; };
 		403413C41793FBE4005BC48B /* NextDayClientGiftData.m in Sources */ = {isa = PBXBuildFile; fileRef = 403413C01793FBE4005BC48B /* NextDayClientGiftData.m */; };
@@ -32,19 +33,6 @@
 		40E058A01949A02600B38E52 /* NCWeiboClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058941949A02600B38E52 /* NCWeiboClient.m */; };
 		40E058A11949A02600B38E52 /* NCWeiboWebAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058971949A02600B38E52 /* NCWeiboWebAuthViewController.m */; };
 		40E058A21949A02600B38E52 /* NCWeiboErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058991949A02600B38E52 /* NCWeiboErrorResponse.m */; };
-		40E058B71949A06400B38E52 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058A51949A06400B38E52 /* AFHTTPClient.m */; };
-		40E058B81949A06400B38E52 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058A71949A06400B38E52 /* AFHTTPRequestOperation.m */; };
-		40E058B91949A06400B38E52 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058A91949A06400B38E52 /* AFImageRequestOperation.m */; };
-		40E058BA1949A06400B38E52 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058AB1949A06400B38E52 /* AFJSONRequestOperation.m */; };
-		40E058BB1949A06400B38E52 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058AD1949A06400B38E52 /* AFNetworkActivityIndicatorManager.m */; };
-		40E058BC1949A06400B38E52 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058B01949A06400B38E52 /* AFPropertyListRequestOperation.m */; };
-		40E058BD1949A06400B38E52 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058B21949A06400B38E52 /* AFURLConnectionOperation.m */; };
-		40E058BE1949A06400B38E52 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058B41949A06400B38E52 /* AFXMLRequestOperation.m */; };
-		40E058BF1949A06400B38E52 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058B61949A06400B38E52 /* UIImageView+AFNetworking.m */; };
-		40E058C71949A10D00B38E52 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40E058C11949A10D00B38E52 /* SSKeychain.strings */; };
-		40E058C81949A10D00B38E52 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058C41949A10D00B38E52 /* SSKeychain.m */; };
-		40E058C91949A10D00B38E52 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058C61949A10D00B38E52 /* SSKeychainQuery.m */; };
-		40E058CF1949A88F00B38E52 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E058CE1949A88F00B38E52 /* MBProgressHUD.m */; };
 		40EE5713176DAF310085F6C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5712176DAF310085F6C3 /* UIKit.framework */; };
 		40EE5715176DAF310085F6C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5714176DAF310085F6C3 /* Foundation.framework */; };
 		40EE5717176DAF310085F6C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5716176DAF310085F6C3 /* CoreGraphics.framework */; };
@@ -57,7 +45,6 @@
 		40EE572C176DAF310085F6C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE572B176DAF310085F6C3 /* ViewController.m */; };
 		40EE572F176DAF310085F6C3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EE572D176DAF310085F6C3 /* ViewController.xib */; };
 		40EE5736176DAF810085F6C3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 40EE5735176DAF810085F6C3 /* README.md */; };
-		40EE5742176DAFDD0085F6C3 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EE573F176DAFDD0085F6C3 /* SRWebSocket.m */; };
 		40EE5745176DB0130085F6C3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5744176DB0130085F6C3 /* Security.framework */; };
 		40EE5747176DB0180085F6C3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5746176DB0180085F6C3 /* CFNetwork.framework */; };
 		40EE5749176DB02D0085F6C3 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE5748176DB02D0085F6C3 /* libicucore.dylib */; };
@@ -116,32 +103,6 @@
 		40E058971949A02600B38E52 /* NCWeiboWebAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWeiboWebAuthViewController.m; sourceTree = "<group>"; };
 		40E058981949A02600B38E52 /* NCWeiboErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCWeiboErrorResponse.h; sourceTree = "<group>"; };
 		40E058991949A02600B38E52 /* NCWeiboErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCWeiboErrorResponse.m; sourceTree = "<group>"; };
-		40E058A41949A06400B38E52 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		40E058A51949A06400B38E52 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		40E058A61949A06400B38E52 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		40E058A71949A06400B38E52 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		40E058A81949A06400B38E52 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		40E058A91949A06400B38E52 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		40E058AA1949A06400B38E52 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		40E058AB1949A06400B38E52 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		40E058AC1949A06400B38E52 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		40E058AD1949A06400B38E52 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		40E058AE1949A06400B38E52 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		40E058AF1949A06400B38E52 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		40E058B01949A06400B38E52 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		40E058B11949A06400B38E52 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		40E058B21949A06400B38E52 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		40E058B31949A06400B38E52 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		40E058B41949A06400B38E52 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		40E058B51949A06400B38E52 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		40E058B61949A06400B38E52 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		40E058C21949A10D00B38E52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SSKeychain.strings; sourceTree = "<group>"; };
-		40E058C31949A10D00B38E52 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		40E058C41949A10D00B38E52 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		40E058C51949A10D00B38E52 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		40E058C61949A10D00B38E52 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
-		40E058CD1949A88F00B38E52 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ../../../MBProgressHUD_Official/MBProgressHUD.h; sourceTree = "<group>"; };
-		40E058CE1949A88F00B38E52 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../../../MBProgressHUD_Official/MBProgressHUD.m; sourceTree = "<group>"; };
 		40EE570F176DAF310085F6C3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EE5712176DAF310085F6C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40EE5714176DAF310085F6C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,9 +120,6 @@
 		40EE572B176DAF310085F6C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		40EE572E176DAF310085F6C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		40EE5735176DAF810085F6C3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
-		40EE573D176DAFDD0085F6C3 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
-		40EE573E176DAFDD0085F6C3 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
-		40EE573F176DAFDD0085F6C3 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		40EE5744176DB0130085F6C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		40EE5746176DB0180085F6C3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		40EE5748176DB02D0085F6C3 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -177,6 +135,8 @@
 		40EE576C176F12D40085F6C3 /* NextDayClientRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextDayClientRequest.m; sourceTree = "<group>"; };
 		40EE5771176F44230085F6C3 /* NextDayClient+HandlerBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NextDayClient+HandlerBlocks.h"; sourceTree = "<group>"; };
 		40EE5772176F44230085F6C3 /* NextDayClient+HandlerBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NextDayClient+HandlerBlocks.m"; sourceTree = "<group>"; };
+		BCF3B766826740989F68C9B0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CAD40DF0AA6B454F88E1DC08 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +155,7 @@
 				40EE5713176DAF310085F6C3 /* UIKit.framework in Frameworks */,
 				40EE5715176DAF310085F6C3 /* Foundation.framework in Frameworks */,
 				40EE5717176DAF310085F6C3 /* CoreGraphics.framework in Frameworks */,
+				2FBF1197633B46159AF34488 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,46 +222,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		40E058A31949A06400B38E52 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				40E058A41949A06400B38E52 /* AFHTTPClient.h */,
-				40E058A51949A06400B38E52 /* AFHTTPClient.m */,
-				40E058A61949A06400B38E52 /* AFHTTPRequestOperation.h */,
-				40E058A71949A06400B38E52 /* AFHTTPRequestOperation.m */,
-				40E058A81949A06400B38E52 /* AFImageRequestOperation.h */,
-				40E058A91949A06400B38E52 /* AFImageRequestOperation.m */,
-				40E058AA1949A06400B38E52 /* AFJSONRequestOperation.h */,
-				40E058AB1949A06400B38E52 /* AFJSONRequestOperation.m */,
-				40E058AC1949A06400B38E52 /* AFNetworkActivityIndicatorManager.h */,
-				40E058AD1949A06400B38E52 /* AFNetworkActivityIndicatorManager.m */,
-				40E058AE1949A06400B38E52 /* AFNetworking.h */,
-				40E058AF1949A06400B38E52 /* AFPropertyListRequestOperation.h */,
-				40E058B01949A06400B38E52 /* AFPropertyListRequestOperation.m */,
-				40E058B11949A06400B38E52 /* AFURLConnectionOperation.h */,
-				40E058B21949A06400B38E52 /* AFURLConnectionOperation.m */,
-				40E058B31949A06400B38E52 /* AFXMLRequestOperation.h */,
-				40E058B41949A06400B38E52 /* AFXMLRequestOperation.m */,
-				40E058B51949A06400B38E52 /* UIImageView+AFNetworking.h */,
-				40E058B61949A06400B38E52 /* UIImageView+AFNetworking.m */,
-			);
-			name = AFNetworking;
-			path = ../../../AFNetworking/AFNetworking;
-			sourceTree = "<group>";
-		};
-		40E058C01949A10D00B38E52 /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				40E058C11949A10D00B38E52 /* SSKeychain.strings */,
-				40E058C31949A10D00B38E52 /* SSKeychain.h */,
-				40E058C41949A10D00B38E52 /* SSKeychain.m */,
-				40E058C51949A10D00B38E52 /* SSKeychainQuery.h */,
-				40E058C61949A10D00B38E52 /* SSKeychainQuery.m */,
-			);
-			name = SSKeychain;
-			path = ../../../sskeychain/SSKeychain;
-			sourceTree = "<group>";
-		};
 		40EE5706176DAF310085F6C3 = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +233,7 @@
 				40EE5718176DAF310085F6C3 /* Example */,
 				40EE5711176DAF310085F6C3 /* Frameworks */,
 				40EE5710176DAF310085F6C3 /* Products */,
+				BCF3B766826740989F68C9B0 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -332,6 +254,7 @@
 				40EE5712176DAF310085F6C3 /* UIKit.framework */,
 				40EE5714176DAF310085F6C3 /* Foundation.framework */,
 				40EE5716176DAF310085F6C3 /* CoreGraphics.framework */,
+				CAD40DF0AA6B454F88E1DC08 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -367,26 +290,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		40EE5738176DAFDD0085F6C3 /* SocketRocket */ = {
-			isa = PBXGroup;
-			children = (
-				40EE573D176DAFDD0085F6C3 /* SocketRocket-Prefix.pch */,
-				40EE573E176DAFDD0085F6C3 /* SRWebSocket.h */,
-				40EE573F176DAFDD0085F6C3 /* SRWebSocket.m */,
-			);
-			name = SocketRocket;
-			path = ../../../SocketRocket/SocketRocket;
-			sourceTree = "<group>";
-		};
 		40EE5743176DAFE80085F6C3 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				40E058CD1949A88F00B38E52 /* MBProgressHUD.h */,
-				40E058CE1949A88F00B38E52 /* MBProgressHUD.m */,
-				40E058C01949A10D00B38E52 /* SSKeychain */,
-				40E058A31949A06400B38E52 /* AFNetworking */,
 				40E058831949A02600B38E52 /* NCWeibo */,
-				40EE5738176DAFDD0085F6C3 /* SocketRocket */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -470,9 +377,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40EE5732176DAF310085F6C3 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				AEFF2F0FF98440AFBCE181BF /* Check Pods Manifest.lock */,
 				40EE570B176DAF310085F6C3 /* Sources */,
 				40EE570C176DAF310085F6C3 /* Frameworks */,
 				40EE570D176DAF310085F6C3 /* Resources */,
+				9E85AF2F3924456088D51963 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -518,7 +427,6 @@
 				40EE5725176DAF310085F6C3 /* Default.png in Resources */,
 				40EE5727176DAF310085F6C3 /* Default@2x.png in Resources */,
 				40EE5729176DAF310085F6C3 /* Default-568h@2x.png in Resources */,
-				40E058C71949A10D00B38E52 /* SSKeychain.strings in Resources */,
 				40EE572F176DAF310085F6C3 /* ViewController.xib in Resources */,
 				40EE5736176DAF810085F6C3 /* README.md in Resources */,
 				40EE574B176DB0CD0085F6C3 /* client.p12 in Resources */,
@@ -526,6 +434,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E85AF2F3924456088D51963 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEFF2F0FF98440AFBCE181BF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40EE570B176DAF310085F6C3 /* Sources */ = {
@@ -536,23 +477,15 @@
 				40EE571F176DAF310085F6C3 /* main.m in Sources */,
 				40EE5723176DAF310085F6C3 /* AppDelegate.m in Sources */,
 				40EE572C176DAF310085F6C3 /* ViewController.m in Sources */,
-				40E058BD1949A06400B38E52 /* AFURLConnectionOperation.m in Sources */,
-				40E058C81949A10D00B38E52 /* SSKeychain.m in Sources */,
-				40EE5742176DAFDD0085F6C3 /* SRWebSocket.m in Sources */,
-				40E058B71949A06400B38E52 /* AFHTTPClient.m in Sources */,
 				40EE5764176F11870085F6C3 /* NextDayClient+Calendar.m in Sources */,
 				40E0589D1949A02600B38E52 /* NCWeiboClient+Status.m in Sources */,
-				40E058BF1949A06400B38E52 /* UIImageView+AFNetworking.m in Sources */,
-				40E058BC1949A06400B38E52 /* AFPropertyListRequestOperation.m in Sources */,
 				40E058A01949A02600B38E52 /* NCWeiboClient.m in Sources */,
 				40EE5766176F11870085F6C3 /* NextDayClient.m in Sources */,
 				40EE576A176F11F50085F6C3 /* NextDayClientObject.m in Sources */,
-				40E058BA1949A06400B38E52 /* AFJSONRequestOperation.m in Sources */,
 				40E0589E1949A02600B38E52 /* NCWeiboClient+User.m in Sources */,
 				40E0587F19499C9700B38E52 /* NextDayClientHelper.m in Sources */,
 				40EE576D176F12D40085F6C3 /* NextDayClientRequest.m in Sources */,
 				40E0588219499E9500B38E52 /* NextDayClient+Bridge.m in Sources */,
-				40E058BE1949A06400B38E52 /* AFXMLRequestOperation.m in Sources */,
 				40E0589F1949A02600B38E52 /* NCWeiboClient+HandlerBlocks.m in Sources */,
 				40E058A11949A02600B38E52 /* NCWeiboWebAuthViewController.m in Sources */,
 				40EE5773176F44230085F6C3 /* NextDayClient+HandlerBlocks.m in Sources */,
@@ -561,15 +494,10 @@
 				40E0589A1949A02600B38E52 /* NCWeiboAuthentication.m in Sources */,
 				40D6AAFC1776FAB7008427C5 /* NextDayClient+EnvVars.m in Sources */,
 				40D6AAFF1776FC49008427C5 /* NextDayClientEnvVars.m in Sources */,
-				40E058BB1949A06400B38E52 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4034139B1793FBA8005BC48B /* NextDayClient+Outbox.m in Sources */,
-				40E058B91949A06400B38E52 /* AFImageRequestOperation.m in Sources */,
 				403413C31793FBE4005BC48B /* NextDayClientGiftReceiver.m in Sources */,
 				40E058A21949A02600B38E52 /* NCWeiboErrorResponse.m in Sources */,
 				403413C41793FBE4005BC48B /* NextDayClientGiftData.m in Sources */,
-				40E058B81949A06400B38E52 /* AFHTTPRequestOperation.m in Sources */,
-				40E058CF1949A88F00B38E52 /* MBProgressHUD.m in Sources */,
-				40E058C91949A10D00B38E52 /* SSKeychainQuery.m in Sources */,
 				4045271517C33F03007BC2E5 /* NextDayClient+Users.m in Sources */,
 				4063084917A7611D0036CF14 /* NextDayClient+Inbox.m in Sources */,
 				4045271817C33F2E007BC2E5 /* NextDayClient+Consts.m in Sources */,
@@ -579,14 +507,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		40E058C11949A10D00B38E52 /* SSKeychain.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40E058C21949A10D00B38E52 /* en */,
-			);
-			name = SSKeychain.strings;
-			sourceTree = "<group>";
-		};
 		40EE571B176DAF310085F6C3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -664,8 +584,9 @@
 		};
 		40EE5733176DAF310085F6C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCF3B766826740989F68C9B0 /* Pods.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/ReactiveCocoa/ReactiveCocoaFramework/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -673,10 +594,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Example/Example-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -684,8 +602,9 @@
 		};
 		40EE5734176DAF310085F6C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCF3B766826740989F68C9B0 /* Pods.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/ReactiveCocoa/ReactiveCocoaFramework/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -693,10 +612,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Example/Example-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
