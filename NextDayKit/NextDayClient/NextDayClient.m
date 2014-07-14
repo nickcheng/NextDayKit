@@ -142,7 +142,7 @@
 
   // Send json
   // 发送前要确保已经 message count 已经 reset
-  NDLI(@"Sending No.%d message: %@", request.messageCount, jsonString);
+  NDLI(@"Sending No.%ld message: %@", (long)request.messageCount, jsonString);
   [_webSocket send:jsonString];
   _requestHandlers[[NSNumber numberWithInteger:request.messageCount]] = handler;
 }
@@ -205,7 +205,7 @@
   NDLI(@"Websocket Connected");
   
   // Reset MessageCount
-  NDLI(@"Reset MessageCount. Last one was:%d", self.messageCount);
+  NDLI(@"Reset MessageCount. Last one was:%ld", (long)self.messageCount);
   [self resetVariables];
   
   //
@@ -259,7 +259,7 @@
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
-  NDLI(@"WebSocket closed. Code:%d. reason:%@", code, reason);
+  NDLI(@"WebSocket closed. Code:%ld. reason:%@", (long)code, reason);
   
   _webSocket = nil;
   _readyState = NextDayClientReadyStateClosed;
