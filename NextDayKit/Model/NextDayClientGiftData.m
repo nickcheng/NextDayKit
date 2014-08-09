@@ -11,16 +11,14 @@
 @implementation NextDayClientGiftData {
   NSString *_backgroundColor;
   NSString *_imageURL;
-  NSString *_phrase1;
-  NSString *_phrase2;
+  NSString *_shortPhrase;
   NSString *_event;
   NSString *_previewImageURL;
 }
 
 @synthesize backgroundColor = _backgroundColor;
 @synthesize imageURL = _imageURL;
-@synthesize phrase1 = _phrase1;
-@synthesize phrase2 = _phrase2;
+@synthesize shortPhrase = _shortPhrase;
 @synthesize event = _event;
 @synthesize previewImageURL = _previewImageURL;
 
@@ -34,8 +32,7 @@
   // Custom initialization
   _backgroundColor = nil;
   _imageURL = nil;
-  _phrase1 = nil;
-  _phrase2 = nil;
+  _shortPhrase = nil;
   _event = nil;
   _previewImageURL = nil;
   
@@ -51,12 +48,11 @@
                                @"background": self.backgroundColor
                                },
                            @"images": @{
-                               @"small": self.imageURL,
-                               @"smallWithDate": self.previewImageURL
+                               @"big": self.imageURL,
+                               @"bigWithDate": self.previewImageURL
                                },
                            @"text": @{
-                               @"comment1": self.phrase1,
-                               @"comment2": self.phrase2,
+                               @"short": self.shortPhrase
                                },
                            @"event": self.event
                            };

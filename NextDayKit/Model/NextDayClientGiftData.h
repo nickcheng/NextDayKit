@@ -12,8 +12,7 @@
 
 @property (nonatomic, strong) NSString *backgroundColor;
 @property (nonatomic, strong) NSString *imageURL;
-@property (nonatomic, strong) NSString *phrase1;
-@property (nonatomic, strong) NSString *phrase2;
+@property (nonatomic, strong) NSString *shortPhrase;
 @property (nonatomic, strong) NSString *event;
 @property (nonatomic, strong) NSString *previewImageURL;
 
