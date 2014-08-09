@@ -26,10 +26,12 @@
     }
     
     // Structure params
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSDictionary *params = @{
                              @"action": @"outbox.add",
                              @"receivers": @[receiver.dict],
-                             @"data": gift.dict
+                             @"data": gift.dict,
+                             @"giftVersion": version
                              };
     
     // Structure request

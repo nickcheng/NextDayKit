@@ -24,7 +24,9 @@
   NSString *_giftImageURL;
   NSString *_giftPhrase1;
   NSString *_giftPhrase2;
+  NSString *_giftShortPhrase;
   NSString *_giftEvent;
+  NSString *_giftVersion;
   double _sndrWeiboID;
   NSString *_sndrWeiboName;
   NSString *_sndrWeiboAvatar;
@@ -47,7 +49,9 @@
 @synthesize giftImageURL = _giftImageURL;
 @synthesize giftPhrase1 = _giftPhrase1;
 @synthesize giftPhrase2 = _giftPhrase2;
+@synthesize giftShortPhrase = _giftShortPhrase;
 @synthesize giftEvent = _giftEvent;
+@synthesize giftVersion = _giftVersion;
 @synthesize sndrWeiboID = _sndrWeiboID;
 @synthesize sndrWeiboName = _sndrWeiboName;
 @synthesize sndrWeiboAvatar = _sndrWeiboAvatar;

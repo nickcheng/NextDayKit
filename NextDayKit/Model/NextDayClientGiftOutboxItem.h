@@ -24,7 +24,9 @@
 @property (nonatomic, strong) NSString *giftImageURL;
 @property (nonatomic, strong) NSString *giftPhrase1;
 @property (nonatomic, strong) NSString *giftPhrase2;
+@property (nonatomic, strong) NSString *giftShortPhrase;
 @property (nonatomic, strong) NSString *giftEvent;
+@property (nonatomic, strong) NSString *giftVersion;
 @property (nonatomic, assign) double giftts;
 @property (nonatomic, assign) double rcvrWeiboID;
 @property (nonatomic, strong) NSString *rcvrWeiboName;

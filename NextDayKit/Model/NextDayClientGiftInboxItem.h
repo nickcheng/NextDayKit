@@ -25,7 +25,9 @@
 @property (nonatomic, strong) NSString *giftImageURL;
 @property (nonatomic, strong) NSString *giftPhrase1;
 @property (nonatomic, strong) NSString *giftPhrase2;
+@property (nonatomic, strong) NSString *giftShortPhrase;
 @property (nonatomic, strong) NSString *giftEvent;
+@property (nonatomic, strong) NSString *giftVersion;
 @property (nonatomic, assign) double sndrWeiboID;
 @property (nonatomic, strong) NSString *sndrWeiboName;
 @property (nonatomic, strong) NSString *sndrWeiboAvatar;
