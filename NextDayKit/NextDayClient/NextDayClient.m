@@ -247,6 +247,7 @@
     NDLE(@"Parsing server response to json dict error: %@", error);
     return;
   }
+  NDLI(@"Formatted: %@", jsonObject);
   
   // check is response or api
   NSString *context = jsonObject[@"context"];
