@@ -57,7 +57,9 @@ static NSInteger kBatchSize = 50;
   NSArray *arr = [idArray subarrayWithRange:range];
   
   __block NSInteger ss = 0;
-  __block NextDayClientCompletionBlock block = ^(BOOL success, id result, NSError *error) {
+  __block __weak NextDayClientCompletionBlock weakBlock;
+  NextDayClientCompletionBlock block;
+  weakBlock = block = ^(BOOL success, id result, NSError *error) {
     if (success) {
       NSDictionary *dict = result;
       [finalResult addEntriesFromDictionary:dict];
@@ -74,7 +76,7 @@ static NSInteger kBatchSize = 50;
       ss += 1;
       NSRange range = NSMakeRange(ss * kBatchSize, ss * kBatchSize + kBatchSize > idArray.count ? idArray.count - ss * kBatchSize : kBatchSize);
       NSArray *array = [idArray subarrayWithRange:range];
-      [self checkNextDayUserFromArray:array completion:block];
+      [self checkNextDayUserFromArray:array completion:weakBlock];
 
     } else {
       NDLE(@"Check NextDay user status error:%@", error);

@@ -35,7 +35,10 @@ static const NSInteger kPageCount = 20;
 }
 
 - (void)subscribeLogFromTS:(NSTimeInterval)ts partCompletion:(NextDayClientCompletionBlock)partCompletionHandler {
-  __block NextDayClientCompletionBlock block = [^(BOOL success, id result, NSError *error) {
+  __block __weak NextDayClientCompletionBlock weakBlock;
+  NextDayClientCompletionBlock block;
+  
+  weakBlock = block = ^(BOOL success, id result, NSError *error) {
     if (!success || result == [NSNull null]) {
       if (partCompletionHandler != nil)
         partCompletionHandler(NO, nil, error);
@@ -50,8 +53,8 @@ static const NSInteger kPageCount = 20;
     // Continue subscribing no matter if need to get more
     NSDictionary *lastLog = [dict[@"result"] lastObject];
     NSTimeInterval lastts = [lastLog[@"ts"] doubleValue];
-    [self subscribeLogFromTS:lastts maxReturnCount:kPageCount completion:block];
-  } copy];
+    [self subscribeLogFromTS:lastts maxReturnCount:kPageCount completion:weakBlock];
+  };
   [self subscribeLogFromTS:ts maxReturnCount:kPageCount completion:block];
 }
 
