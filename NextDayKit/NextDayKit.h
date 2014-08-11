@@ -19,3 +19,4 @@
 #import "NextDayClient/API/NextDayClient+Inbox.h"
 #import "NextDayClient/API/NextDayClient+Outbox.h"
 #import "NextDayClient/API/NextDayClient+Users.h"
+#import "NextDayClient/API/NextDayClient+SharingStatus.h"

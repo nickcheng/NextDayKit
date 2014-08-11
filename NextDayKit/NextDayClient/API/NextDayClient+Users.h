@@ -11,6 +11,7 @@
 
 @interface NextDayClient (Users)
 
-- (void)checkNextDayUserInBatchesFromArray:(NSArray *)idArray completion:(NextDayClientCompletionBlock)completionHandler;
+- (void)checkNextDayUserInBatchesFromArray:(NSArray *)idArray
+                                completion:(NextDayClientCompletionBlock)completionHandler;
 
 @end

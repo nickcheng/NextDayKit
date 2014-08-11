@@ -29,7 +29,7 @@
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSDictionary *params = @{
                              @"action": @"outbox.add",
-                             @"receivers": @[receiver.dict],
+                             @"receivers": receiver ? @[receiver.dict] : @[],
                              @"data": gift.dict,
                              @"giftVersion": version
                              };
@@ -62,6 +62,10 @@
       }
     }];
   }];
+}
+
+- (void)saveGift:(NextDayClientGiftData *)gift completion:(NextDayClientCompletionBlock)completionHandler {
+  [self sendGift:gift toReceiver:nil completion:completionHandler];
 }
 
 - (void)deleteOutboxItemByID:(double)giftID inTS:(double)ts completion:(NextDayClientCompletionBlock)completionHandler {
