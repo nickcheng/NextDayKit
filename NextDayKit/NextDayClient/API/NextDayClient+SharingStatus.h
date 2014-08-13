@@ -10,7 +10,8 @@
 #import "NextDayClient+HandlerBlocks.h"
 
 typedef enum {
-  NextDaySharingChannelWeChatMoments = 0,
+  NextDaySharingChannelNone = 0,
+  NextDaySharingChannelWeChatMoments,
   NextDaySharingChannelWeibo,
   NextDaySharingChannelInstagram,
   NextDaySharingChannelTwitter,
