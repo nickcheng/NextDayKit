@@ -26,8 +26,11 @@
 @property (nonatomic, strong) NSString *giftPhrase2;
 @property (nonatomic, strong) NSString *giftShortPhrase;
 @property (nonatomic, strong) NSString *giftEvent;
-@property (nonatomic, strong) NSString *giftVersion;
+@property (nonatomic, assign) double giftLatitude;
+@property (nonatomic, assign) double giftLongitude;
+@property (nonatomic, strong) NSString *giftReverse;
 @property (nonatomic, assign) double giftts;
+@property (nonatomic, strong) NSString *giftVersion;
 @property (nonatomic, assign) double rcvrWeiboID;
 @property (nonatomic, strong) NSString *rcvrWeiboName;
 @property (nonatomic, strong) NSString *rcvrWeiboRemark;
@@ -35,5 +38,7 @@
 @property (nonatomic, assign) NSInteger rcvrWeiboGender;
 @property (nonatomic, strong) NSString *rcvrTZOffset;
 @property (nonatomic, strong) NSDate *rcvrScheduledDate;
+@property (nonatomic, strong) NSString *latestSharingChannel;
+@property (nonatomic, strong) NSDate *latestSharingTime;
 
 @end

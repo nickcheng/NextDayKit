@@ -14,6 +14,9 @@
   NSString *_shortPhrase;
   NSString *_event;
   NSString *_previewImageURL;
+  double _geoLatitude;
+  double _geoLongitude;
+  NSString *_geoReverse;
 }
 
 @synthesize backgroundColor = _backgroundColor;
@@ -21,6 +24,9 @@
 @synthesize shortPhrase = _shortPhrase;
 @synthesize event = _event;
 @synthesize previewImageURL = _previewImageURL;
+@synthesize geoLatitude = _geoLatitude;
+@synthesize geoLongitude = _geoLongitude;
+@synthesize geoReverse = _geoReverse;
 
 #pragma mark -
 #pragma mark Init
@@ -35,6 +41,7 @@
   _shortPhrase = nil;
   _event = nil;
   _previewImageURL = nil;
+  _geoReverse = nil;
   
   return self;
 }
@@ -54,11 +61,15 @@
                            @"text": @{
                                @"short": self.shortPhrase
                                },
-                           @"event": self.event
+                           @"event": self.event,
+                           @"geo": @{
+                               @"lat": @(self.geoLatitude),
+                               @"lng": @(self.geoLongitude),
+                               @"reverse": self.geoReverse
+                               }
                            };
   
   return result;
 }
-
 
 @end

@@ -26,6 +26,9 @@
   NSString *_giftPhrase2;
   NSString *_giftShortPhrase;
   NSString *_giftEvent;
+  double _giftLatitude;
+  double _giftLongitude;
+  NSString *_giftReverse;
   NSString *_giftVersion;
   double _sndrWeiboID;
   NSString *_sndrWeiboName;
@@ -51,6 +54,9 @@
 @synthesize giftPhrase2 = _giftPhrase2;
 @synthesize giftShortPhrase = _giftShortPhrase;
 @synthesize giftEvent = _giftEvent;
+@synthesize giftLatitude = _giftLatitude;
+@synthesize giftLongitude = _giftLongitude;
+@synthesize giftReverse = _giftReverse;
 @synthesize giftVersion = _giftVersion;
 @synthesize sndrWeiboID = _sndrWeiboID;
 @synthesize sndrWeiboName = _sndrWeiboName;

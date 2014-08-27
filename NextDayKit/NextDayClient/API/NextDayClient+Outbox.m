@@ -114,4 +114,58 @@
   }];
 }
 
+- (void)updateGiftByID:(double)giftID
+                  inTS:(double)ts
+              withData:(NextDayClientGiftData *)gift
+          withReceiver:(NextDayClientGiftReceiver *)receiver
+            completion:(NextDayClientCompletionBlock)completionHandler {
+  [self ensureEnvVarsReadyWithCompletion:^(BOOL success, id result, NSError *error) {
+    if (!success) {
+      if (completionHandler != nil)
+        completionHandler(NO, nil, error);
+      return;
+    }
+    
+    // Structure params
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSDictionary *params = @{
+                             @"action": @"outbox.upd",
+                             @"giftId": @(giftID),
+                             @"ts": @(ts),
+                             @"data": gift.dict,
+                             @"receivers": @[receiver.dict],
+                             @"giftVersion": version
+                             };
+    
+    // Structure request
+    NextDayClientRequest *request = [[NextDayClientRequest alloc] initAsAction];
+    request.data[@"params"] = params;
+    
+    // Send request
+    [self send:request completion:^(NSDictionary *responseDict, NSError *error) {
+      if (error != nil) {
+        if (completionHandler != nil)
+          completionHandler(NO, nil, error);
+        return;
+      }
+      
+      if (responseDict[@"status"]) {
+        NSString *status = responseDict[@"status"];
+        if ([status isEqualToString:@"OK"]) { // Parse responseString and callback
+          NSArray *result = responseDict[@"result"];
+          if (completionHandler != nil)
+            completionHandler(YES, result, error);
+        }
+      } else if (responseDict[@"error"]) {
+        NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
+                                             code:400
+                                         userInfo:@{NSLocalizedDescriptionKey: responseDict[@"error"]}];
+        if (completionHandler != nil)
+          completionHandler(NO, responseDict, error);
+      }
+    }];
+  }];
+
+}
+
 @end

@@ -9,7 +9,7 @@
 #import "NextDayClient.h"
 #import "NextDayClient+HandlerBlocks.h"
 
-@class NextDayClientGiftData, NextDayClientGiftReceiver;
+@class NextDayClientGiftData, NextDayClientGiftReceiver, NextDayClientGiftOutboxItem;
 
 @interface NextDayClient (Outbox)
 
@@ -23,5 +23,11 @@
 - (void)deleteOutboxItemByID:(double)giftID
                         inTS:(double)ts
                   completion:(NextDayClientCompletionBlock)completionHandler;
+
+- (void)updateGiftByID:(double)giftID
+                  inTS:(double)ts
+              withData:(NextDayClientGiftData *)gift
+          withReceiver:(NextDayClientGiftReceiver *)receiver
+            completion:(NextDayClientCompletionBlock)completionHandler;
 
 @end

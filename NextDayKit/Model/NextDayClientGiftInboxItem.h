@@ -27,6 +27,9 @@
 @property (nonatomic, strong) NSString *giftPhrase2;
 @property (nonatomic, strong) NSString *giftShortPhrase;
 @property (nonatomic, strong) NSString *giftEvent;
+@property (nonatomic, assign) double giftLatitude;
+@property (nonatomic, assign) double giftLongitude;
+@property (nonatomic, strong) NSString *giftReverse;
 @property (nonatomic, strong) NSString *giftVersion;
 @property (nonatomic, assign) double sndrWeiboID;
 @property (nonatomic, strong) NSString *sndrWeiboName;

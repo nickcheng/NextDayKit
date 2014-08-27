@@ -25,8 +25,11 @@
   NSString *_giftPhrase2;
   NSString *_giftShortPhrase;
   NSString *_giftEvent;
-  NSString *_giftVersion;
+  double _giftLatitude;
+  double _giftLongitude;
+  NSString *_giftReverse;
   double _giftts;
+  NSString *_giftVersion;
   double _rcvrWeiboID;
   NSString *_rcvrWeiboName;
   NSString *_rcvrWeiboRemark;
@@ -34,6 +37,8 @@
   NSInteger _rcvrWeiboGender;
   NSString *_rcvrTZOffset;
   NSDate *_rcvrScheduledDate;
+  NSString *_latestSharingChannel;
+  NSDate *_latestSharingTime;
 }
 
 @synthesize giftID = _giftID;
@@ -52,8 +57,11 @@
 @synthesize giftPhrase2 = _giftPhrase2;
 @synthesize giftShortPhrase = _giftShortPhrase;
 @synthesize giftEvent = _giftEvent;
-@synthesize giftVersion = _giftVersion;
+@synthesize giftLatitude = _giftLatitude;
+@synthesize giftLongitude = _giftLongitude;
+@synthesize giftReverse = _giftReverse;
 @synthesize giftts = _giftts;
+@synthesize giftVersion = _giftVersion;
 @synthesize rcvrWeiboID = _rcvrWeiboID;
 @synthesize rcvrWeiboName = _rcvrWeiboName;
 @synthesize rcvrWeiboRemark = _rcvrWeiboRemark;
@@ -61,5 +69,7 @@
 @synthesize rcvrWeiboGender = _rcvrWeiboGender;
 @synthesize rcvrTZOffset = _rcvrTZOffset;
 @synthesize rcvrScheduledDate = _rcvrScheduledDate;
+@synthesize latestSharingChannel = _latestSharingChannel;
+@synthesize latestSharingTime = _latestSharingTime;
 
 @end
