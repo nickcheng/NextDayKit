@@ -25,7 +25,8 @@
       || envVars.weiboName == nil
       || envVars.weiboAvatar == nil
       || envVars.weiboLocation == nil
-      || envVars.deviceId == nil) {
+      || envVars.deviceId == nil
+      || envVars.supportedGiftVersions == nil) {
     NDLE(@"Required params not ready! Will not call set envvars.");
     NSError *error = [NSError errorWithDomain:NEXTDAYCLIENT_ERRORDOMAIN
                                          code:404
@@ -42,6 +43,7 @@
   [pr setObject:envVars.weiboName forKey:@"weiboName"];
   [pr setObject:envVars.weiboAvatar forKey:@"weiboAvatar"];
   [pr setObject:envVars.weiboLocation forKey:@"weiboLocation"];
+  [pr setObject:envVars.supportedGiftVersions forKey:@"supportedGiftVersions"];
   // Check optional params
   if (envVars.apnToken != nil) [pr setObject:envVars.apnToken forKey:@"apnToken"];
   if (envVars.version != nil) [pr setObject:envVars.version forKey:@"version"];

@@ -19,6 +19,7 @@
   NSString *_apnToken;
   NSString *_deviceId;
   NSString *_version;
+  NSArray *_supportedGiftVersions;
 }
 
 @synthesize weiboID = _weiboID;
@@ -31,6 +32,7 @@
 @synthesize apnToken = _apnToken;
 @synthesize deviceId = _deviceId;
 @synthesize version = _version;
+@synthesize supportedGiftVersions = _supportedGiftVersions;
 
 #pragma mark -
 #pragma mark Init
@@ -50,6 +52,7 @@
   _apnToken = nil;
   _deviceId = nil;
   _version = nil;
+  _supportedGiftVersions = nil;
   
   return self;
 }

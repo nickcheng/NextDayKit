@@ -38,6 +38,7 @@
     ev.deviceId = [[UIDevice currentDevice] identifierForVendor].UUIDString;
     ev.apnToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"devicetoken"];
     ev.version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    ev.supportedGiftVersions = [[NSUserDefaults standardUserDefaults] objectForKey:@"supportedgiftversions"];
     [self setVars:ev completion:^(BOOL success, id result, NSError *error) {
       if (success) {
         if (handler != nil)

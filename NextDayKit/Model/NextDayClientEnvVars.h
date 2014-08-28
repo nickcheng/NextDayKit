@@ -20,5 +20,6 @@
 @property (nonatomic, strong) NSString *apnToken;
 @property (nonatomic, strong) NSString *deviceId; // REQUIRED
 @property (nonatomic, strong) NSString *version;
+@property (nonatomic, strong) NSArray *supportedGiftVersions; // REQUIRED
 
 @end
