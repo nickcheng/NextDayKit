@@ -15,8 +15,8 @@
 @property (nonatomic, strong) NSString *shortPhrase;
 @property (nonatomic, strong) NSString *event;
 @property (nonatomic, strong) NSString *previewImageURL;
-@property (nonatomic, assign) double geoLatitude;
-@property (nonatomic, assign) double geoLongitude;
+@property (nonatomic, strong) NSNumber *geoLatitude;
+@property (nonatomic, strong) NSNumber *geoLongitude;
 @property (nonatomic, strong) NSString *geoReverse;
 
 - (NSDictionary *)dict;

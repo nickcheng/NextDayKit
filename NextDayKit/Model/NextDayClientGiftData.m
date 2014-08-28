@@ -14,8 +14,8 @@
   NSString *_shortPhrase;
   NSString *_event;
   NSString *_previewImageURL;
-  double _geoLatitude;
-  double _geoLongitude;
+  NSNumber *_geoLatitude;
+  NSNumber *_geoLongitude;
   NSString *_geoReverse;
 }
 
@@ -50,24 +50,29 @@
 #pragma mark Public Methods
 
 - (NSDictionary *)dict {
-  NSDictionary *result = @{
-                           @"colors": @{
-                               @"background": self.backgroundColor
-                               },
-                           @"images": @{
-                               @"big": self.imageURL,
-                               @"bigWithDate": self.previewImageURL
-                               },
-                           @"text": @{
-                               @"short": self.shortPhrase
-                               },
-                           @"event": self.event,
-                           @"geo": @{
-                               @"lat": @(self.geoLatitude),
-                               @"lng": @(self.geoLongitude),
-                               @"reverse": self.geoReverse
-                               }
-                           };
+  NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+  [result addEntriesFromDictionary:@{
+                                     @"colors": @{
+                                         @"background": self.backgroundColor
+                                         },
+                                     @"images": @{
+                                         @"big": self.imageURL,
+                                         @"bigWithDate": self.previewImageURL
+                                         },
+                                     @"text": @{
+                                         @"short": self.shortPhrase
+                                         },
+                                     @"event": self.event
+                                     }];
+  if (self.geoLatitude && self.geoLongitude) {
+    [result addEntriesFromDictionary:@{
+                                       @"geo": @{
+                                           @"lat": self.geoLatitude,
+                                           @"lng": self.geoLongitude,
+                                           @"reverse": self.geoReverse
+                                           }
+                                       }];
+  }
   
   return result;
 }
