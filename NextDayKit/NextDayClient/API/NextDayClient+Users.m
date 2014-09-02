@@ -17,7 +17,7 @@ static NSInteger kBatchSize = 50;
 - (void)checkNextDayUserFromArray:(NSArray *)idArray completion:(NextDayClientCompletionBlock)completionHandler {
   // Structure params
   NSDictionary *params = @{
-                           @"action": @"users.identify",
+                           @"action": @"users.identify2",
                            @"userIds": idArray,
                            };
   
@@ -36,7 +36,7 @@ static NSInteger kBatchSize = 50;
     if (responseDict[@"status"]) {
       NSString *status = responseDict[@"status"];
       if ([status isEqualToString:@"OK"]) { // Parse responseString and callback
-        NSArray *result = responseDict[@"result"];
+        NSDictionary *result = responseDict[@"result"];
         if (completionHandler != nil)
           completionHandler(YES, result, error);
       }
