@@ -264,6 +264,7 @@
   
   _webSocket = nil;
   _readyState = NextDayClientReadyStateClosed;
+  _envState = NextDayClientEnvStateNone;
   
   if (_isReconnect) {
     _isReconnect = NO;
@@ -278,6 +279,7 @@
   //
   _webSocket = nil;
   _readyState = NextDayClientReadyStateClosed;
+  _envState = NextDayClientEnvStateNone;
 
   // Call reconnect completion handler
   if (_reconnectHandler) {
