@@ -64,15 +64,18 @@
                                          },
                                      @"event": self.event
                                      }];
-  if (self.geoLatitude && self.geoLongitude) {
-    [result addEntriesFromDictionary:@{
-                                       @"geo": @{
-                                           @"lat": self.geoLatitude,
-                                           @"lng": self.geoLongitude,
-                                           @"reverse": self.geoReverse
-                                           }
-                                       }];
-  }
+  //
+  NSMutableDictionary *geoPart = [[NSMutableDictionary alloc] init];
+  if (self.geoReverse && self.geoReverse.length > 0)
+    [geoPart setObject:self.geoReverse forKey:@"reverse"];
+  if (self.geoLatitude && self.geoLongitude)
+    [geoPart addEntriesFromDictionary:@{
+                                        @"lat": self.geoLatitude,
+                                        @"lng": self.geoLongitude,
+                                        }];
+  //
+  if (geoPart.count && geoPart.count > 0)
+    [result setObject:geoPart forKey:@"geo"];
   
   return result;
 }
